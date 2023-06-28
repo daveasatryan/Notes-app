@@ -1,0 +1,22 @@
+{
+    "app_name": "Product",
+    "sign_in": "Sign In",
+    "sign_up": "Sign Up",
+    "email_lable": "Email",
+    "email_hint": "Enter email",
+    "password_hint": "Enter password",
+    "confirm_password_hint": "Enter confirm password",
+    "confirm_password_lable": "Confirm password",
+    "password_lable": "Password",
+    "join": "Join",
+    "create_account": "Create Account",
+    "dashboard": "Dashboard",
+    "save": "Save",
+    "new_note": "New note",
+    "note": "Note",
+    "add": "Add",
+    "new_note_hint": "Write your new note",
+    "new_note_lable": "New note",
+    "header_hint": "Write header",
+    "header_lable": "Header"
+}
