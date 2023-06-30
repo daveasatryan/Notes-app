@@ -94,7 +94,7 @@ class _AppErrorWidgetState extends State<AppErrorWidget> with BaseStateMixin {
                         ? Padding(
                             padding: EdgeInsets.only(bottom: 30.sp),
                             child: CustomButton(
-                              color: colors.borderTrueColor,
+                              color: colors.yellowMainColor,
                               padding: EdgeInsets.zero,
                               isColorFilled: false,
                               onTap: () {
@@ -107,7 +107,7 @@ class _AppErrorWidgetState extends State<AppErrorWidget> with BaseStateMixin {
                                   horizontal: 24.sp,
                                 ),
                                 child: Text(
-                                  widget.buttonText ?? 'continue',
+                                  widget.buttonText ?? 'Ok',
                                   style: fonts.latoBold.copyWith(
                                     color: colors.whiteColor,
                                     fontSize: 16.sp,

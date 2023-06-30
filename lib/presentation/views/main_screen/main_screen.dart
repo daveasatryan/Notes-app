@@ -48,31 +48,32 @@ class _MainScreenState extends State<MainScreen> with BaseStateMixin {
           note: (notes) {
             hideLoading(context);
             return Scaffold(
+              backgroundColor: colors.appSecondaryColor,
               appBar: AppBarWidget(
                 showLogOut: true,
                 logOut: () => context.read<MainBloc>().add(MainEvent.signOut()),
                 title: user?.email ?? '',
-                backgroundColor: colors.purple,
+                titleStyle: fonts.latoRegular.copyWith(
+                  fontSize: 15,
+                  color: colors.appSecondaryColor,
+                ),
+                backgroundColor: colors.yellowMainColor,
               ),
               body: SingleChildScrollView(
                 child: Column(
                   children: [
                     notes.isEmpty
-                        ? Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              const SizedBox(),
-                              //Image.asset(AppAssets.emptyListIcon),
-                              Text(
-                                "Hii! You don't have any notes",
+                        ? Center(
+                            child: Padding(
+                              padding: const EdgeInsets.only(top: 50),
+                              child: Text(
+                                context.strings.you_dont_have_notes,
                                 style: fonts.latoMediumItalic.copyWith(
-                                  color: colors.black45Color,
+                                  color: colors.barrierColor,
                                   fontSize: 25,
                                 ),
                               ),
-                              const SizedBox(),
-                            ],
+                            ),
                           )
                         : GridView.builder(
                             gridDelegate:
@@ -97,7 +98,7 @@ class _MainScreenState extends State<MainScreen> with BaseStateMixin {
                 ),
               ),
               floatingActionButton: FloatingActionButton(
-                backgroundColor: colors.purple,
+                backgroundColor: colors.yellowMainColor,
                 child: const Icon(Icons.add),
                 onPressed: () => showModalBottomSheet(
                   constraints:

@@ -33,8 +33,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "dashboard": MessageLookupByLibrary.simpleMessage("Dashboard"),
         "email_hint": MessageLookupByLibrary.simpleMessage("Enter email"),
         "email_lable": MessageLookupByLibrary.simpleMessage("Email"),
+        "field_is_required":
+            MessageLookupByLibrary.simpleMessage("Field is required"),
         "header_hint": MessageLookupByLibrary.simpleMessage("Write header"),
         "header_lable": MessageLookupByLibrary.simpleMessage("Header"),
+        "invalid_email": MessageLookupByLibrary.simpleMessage("Invalid email"),
+        "invalid_filed": MessageLookupByLibrary.simpleMessage("Invalid filed"),
         "join": MessageLookupByLibrary.simpleMessage("Join"),
         "log_out": MessageLookupByLibrary.simpleMessage("LogOut"),
         "new_note": MessageLookupByLibrary.simpleMessage("New note"),
@@ -42,12 +46,17 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Write your note"),
         "new_note_lable": MessageLookupByLibrary.simpleMessage("New note"),
         "note": MessageLookupByLibrary.simpleMessage("Note"),
+        "note_details": MessageLookupByLibrary.simpleMessage("Note details"),
         "password_hint": MessageLookupByLibrary.simpleMessage("Enter password"),
         "password_lable": MessageLookupByLibrary.simpleMessage("Password"),
         "save": MessageLookupByLibrary.simpleMessage("Save"),
         "sign_in": MessageLookupByLibrary.simpleMessage("Sign In"),
         "sign_up": MessageLookupByLibrary.simpleMessage("Sign Up"),
         "update": MessageLookupByLibrary.simpleMessage("Update"),
-        "update_note": MessageLookupByLibrary.simpleMessage("Update note")
+        "update_note": MessageLookupByLibrary.simpleMessage("Update note"),
+        "welcome_notes_app":
+            MessageLookupByLibrary.simpleMessage("Welcome to notes app"),
+        "you_dont_have_notes": MessageLookupByLibrary.simpleMessage(
+            "Hii! You don\'t have any notes")
       };
 }

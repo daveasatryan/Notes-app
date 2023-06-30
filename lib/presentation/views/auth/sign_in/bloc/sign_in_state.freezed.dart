@@ -21,7 +21,8 @@ mixin _$SignInState {
     required TResult Function() loading,
     required TResult Function() success,
     required TResult Function(String msg) error,
-    required TResult Function() signIn,
+    required TResult Function(ValidationEnum email, ValidationEnum password)
+        signIn,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -29,7 +30,7 @@ mixin _$SignInState {
     TResult? Function()? loading,
     TResult? Function()? success,
     TResult? Function(String msg)? error,
-    TResult? Function()? signIn,
+    TResult? Function(ValidationEnum email, ValidationEnum password)? signIn,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -37,7 +38,7 @@ mixin _$SignInState {
     TResult Function()? loading,
     TResult Function()? success,
     TResult Function(String msg)? error,
-    TResult Function()? signIn,
+    TResult Function(ValidationEnum email, ValidationEnum password)? signIn,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -127,7 +128,8 @@ class _$_$SignInStateLoading implements _$SignInStateLoading {
     required TResult Function() loading,
     required TResult Function() success,
     required TResult Function(String msg) error,
-    required TResult Function() signIn,
+    required TResult Function(ValidationEnum email, ValidationEnum password)
+        signIn,
   }) {
     return loading();
   }
@@ -138,7 +140,7 @@ class _$_$SignInStateLoading implements _$SignInStateLoading {
     TResult? Function()? loading,
     TResult? Function()? success,
     TResult? Function(String msg)? error,
-    TResult? Function()? signIn,
+    TResult? Function(ValidationEnum email, ValidationEnum password)? signIn,
   }) {
     return loading?.call();
   }
@@ -149,7 +151,7 @@ class _$_$SignInStateLoading implements _$SignInStateLoading {
     TResult Function()? loading,
     TResult Function()? success,
     TResult Function(String msg)? error,
-    TResult Function()? signIn,
+    TResult Function(ValidationEnum email, ValidationEnum password)? signIn,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -241,7 +243,8 @@ class _$_$SignInStateSuccess implements _$SignInStateSuccess {
     required TResult Function() loading,
     required TResult Function() success,
     required TResult Function(String msg) error,
-    required TResult Function() signIn,
+    required TResult Function(ValidationEnum email, ValidationEnum password)
+        signIn,
   }) {
     return success();
   }
@@ -252,7 +255,7 @@ class _$_$SignInStateSuccess implements _$SignInStateSuccess {
     TResult? Function()? loading,
     TResult? Function()? success,
     TResult? Function(String msg)? error,
-    TResult? Function()? signIn,
+    TResult? Function(ValidationEnum email, ValidationEnum password)? signIn,
   }) {
     return success?.call();
   }
@@ -263,7 +266,7 @@ class _$_$SignInStateSuccess implements _$SignInStateSuccess {
     TResult Function()? loading,
     TResult Function()? success,
     TResult Function(String msg)? error,
-    TResult Function()? signIn,
+    TResult Function(ValidationEnum email, ValidationEnum password)? signIn,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -382,7 +385,8 @@ class _$_$SignInStateError implements _$SignInStateError {
     required TResult Function() loading,
     required TResult Function() success,
     required TResult Function(String msg) error,
-    required TResult Function() signIn,
+    required TResult Function(ValidationEnum email, ValidationEnum password)
+        signIn,
   }) {
     return error(msg);
   }
@@ -393,7 +397,7 @@ class _$_$SignInStateError implements _$SignInStateError {
     TResult? Function()? loading,
     TResult? Function()? success,
     TResult? Function(String msg)? error,
-    TResult? Function()? signIn,
+    TResult? Function(ValidationEnum email, ValidationEnum password)? signIn,
   }) {
     return error?.call(msg);
   }
@@ -404,7 +408,7 @@ class _$_$SignInStateError implements _$SignInStateError {
     TResult Function()? loading,
     TResult Function()? success,
     TResult Function(String msg)? error,
-    TResult Function()? signIn,
+    TResult Function(ValidationEnum email, ValidationEnum password)? signIn,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -466,6 +470,8 @@ abstract class _$$_$SignInStateSignInCopyWith<$Res> {
   factory _$$_$SignInStateSignInCopyWith(_$_$SignInStateSignIn value,
           $Res Function(_$_$SignInStateSignIn) then) =
       __$$_$SignInStateSignInCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ValidationEnum email, ValidationEnum password});
 }
 
 /// @nodoc
@@ -475,26 +481,60 @@ class __$$_$SignInStateSignInCopyWithImpl<$Res>
   __$$_$SignInStateSignInCopyWithImpl(
       _$_$SignInStateSignIn _value, $Res Function(_$_$SignInStateSignIn) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? email = null,
+    Object? password = null,
+  }) {
+    return _then(_$_$SignInStateSignIn(
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as ValidationEnum,
+      password: null == password
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as ValidationEnum,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_$SignInStateSignIn implements _$SignInStateSignIn {
-  const _$_$SignInStateSignIn();
+  const _$_$SignInStateSignIn({required this.email, required this.password});
+
+  @override
+  final ValidationEnum email;
+  @override
+  final ValidationEnum password;
 
   @override
   String toString() {
-    return 'SignInState.signIn()';
+    return 'SignInState.signIn(email: $email, password: $password)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_$SignInStateSignIn);
+        (other.runtimeType == runtimeType &&
+            other is _$_$SignInStateSignIn &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.password, password) ||
+                other.password == password));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, email, password);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_$SignInStateSignInCopyWith<_$_$SignInStateSignIn> get copyWith =>
+      __$$_$SignInStateSignInCopyWithImpl<_$_$SignInStateSignIn>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -502,9 +542,10 @@ class _$_$SignInStateSignIn implements _$SignInStateSignIn {
     required TResult Function() loading,
     required TResult Function() success,
     required TResult Function(String msg) error,
-    required TResult Function() signIn,
+    required TResult Function(ValidationEnum email, ValidationEnum password)
+        signIn,
   }) {
-    return signIn();
+    return signIn(email, password);
   }
 
   @override
@@ -513,9 +554,9 @@ class _$_$SignInStateSignIn implements _$SignInStateSignIn {
     TResult? Function()? loading,
     TResult? Function()? success,
     TResult? Function(String msg)? error,
-    TResult? Function()? signIn,
+    TResult? Function(ValidationEnum email, ValidationEnum password)? signIn,
   }) {
-    return signIn?.call();
+    return signIn?.call(email, password);
   }
 
   @override
@@ -524,11 +565,11 @@ class _$_$SignInStateSignIn implements _$SignInStateSignIn {
     TResult Function()? loading,
     TResult Function()? success,
     TResult Function(String msg)? error,
-    TResult Function()? signIn,
+    TResult Function(ValidationEnum email, ValidationEnum password)? signIn,
     required TResult orElse(),
   }) {
     if (signIn != null) {
-      return signIn();
+      return signIn(email, password);
     }
     return orElse();
   }
@@ -572,5 +613,13 @@ class _$_$SignInStateSignIn implements _$SignInStateSignIn {
 }
 
 abstract class _$SignInStateSignIn implements SignInState {
-  const factory _$SignInStateSignIn() = _$_$SignInStateSignIn;
+  const factory _$SignInStateSignIn(
+      {required final ValidationEnum email,
+      required final ValidationEnum password}) = _$_$SignInStateSignIn;
+
+  ValidationEnum get email;
+  ValidationEnum get password;
+  @JsonKey(ignore: true)
+  _$$_$SignInStateSignInCopyWith<_$_$SignInStateSignIn> get copyWith =>
+      throw _privateConstructorUsedError;
 }

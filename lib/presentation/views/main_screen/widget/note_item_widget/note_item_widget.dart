@@ -31,14 +31,15 @@ class NoteItemWidget extends StatelessWidget with BaseStatelessMixin {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      // onTap: () => AppRoutes.goToNested(
-      //   AppRoutes.noteRoute,
-      //   arguments: note,
-      // ),
+      onTap: () => Navigator.pushNamed(
+        context,
+        AppRoutes.noteRoute,
+        arguments: note,
+      ),
       child: Card(
         margin: const EdgeInsets.all(7),
         elevation: 0,
-        color: context.colors.barrierColor.withOpacity(0.1),
+        color: context.colors.orangeShadeColor,
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 10),
           child: Column(

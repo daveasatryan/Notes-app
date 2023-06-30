@@ -133,7 +133,24 @@ class _CustomTextFieldState extends State<CustomTextField> {
             widget.textCapitalization ?? TextCapitalization.sentences,
         textAlignVertical: TextAlignVertical.center,
         // todo: Set default style,
+
         decoration: InputDecoration(
+            suffixIcon: widget.isPasswordField && widget.suffixIcon == null
+                ? InkWell(
+                    onTap: widget.togglePasswordVisibility,
+                    child: widget.hidePassword
+                        ? Icon(
+                            Icons.visibility_off_outlined,
+                            color: widget.suffixIconColor ??
+                                context.colors.barrierColor,
+                          )
+                        : Icon(
+                            Icons.visibility_outlined,
+                            color: widget.suffixIconColor ??
+                                context.colors.barrierColor,
+                          ),
+                  )
+                : widget.suffixIcon,
             floatingLabelBehavior: FloatingLabelBehavior.always,
             errorText: widget.errorText,
             labelStyle: widget.labelStyle,

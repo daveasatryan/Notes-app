@@ -19,37 +19,63 @@ mixin _$SignUpEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(String email, String password) signUp,
+    required TResult Function(String email) validateEmail,
+    required TResult Function(String password) validatePassword,
+    required TResult Function(String confirmPassword, String password)
+        validateConfirmPassword,
+    required TResult Function(
+            String email, String password, String confirmPassword)
+        signUp,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(String email, String password)? signUp,
+    TResult? Function(String email)? validateEmail,
+    TResult? Function(String password)? validatePassword,
+    TResult? Function(String confirmPassword, String password)?
+        validateConfirmPassword,
+    TResult? Function(String email, String password, String confirmPassword)?
+        signUp,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(String email, String password)? signUp,
+    TResult Function(String email)? validateEmail,
+    TResult Function(String password)? validatePassword,
+    TResult Function(String confirmPassword, String password)?
+        validateConfirmPassword,
+    TResult Function(String email, String password, String confirmPassword)?
+        signUp,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(InitialSignUp value) initial,
+    required TResult Function(ValidateEmail value) validateEmail,
+    required TResult Function(ValidatePassword value) validatePassword,
+    required TResult Function(ValidateConfirmePassword value)
+        validateConfirmPassword,
     required TResult Function(SignUp value) signUp,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(InitialSignUp value)? initial,
+    TResult? Function(ValidateEmail value)? validateEmail,
+    TResult? Function(ValidatePassword value)? validatePassword,
+    TResult? Function(ValidateConfirmePassword value)? validateConfirmPassword,
     TResult? Function(SignUp value)? signUp,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitialSignUp value)? initial,
+    TResult Function(ValidateEmail value)? validateEmail,
+    TResult Function(ValidatePassword value)? validatePassword,
+    TResult Function(ValidateConfirmePassword value)? validateConfirmPassword,
     TResult Function(SignUp value)? signUp,
     required TResult orElse(),
   }) =>
@@ -113,7 +139,13 @@ class _$InitialSignUp implements InitialSignUp {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(String email, String password) signUp,
+    required TResult Function(String email) validateEmail,
+    required TResult Function(String password) validatePassword,
+    required TResult Function(String confirmPassword, String password)
+        validateConfirmPassword,
+    required TResult Function(
+            String email, String password, String confirmPassword)
+        signUp,
   }) {
     return initial();
   }
@@ -122,7 +154,12 @@ class _$InitialSignUp implements InitialSignUp {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(String email, String password)? signUp,
+    TResult? Function(String email)? validateEmail,
+    TResult? Function(String password)? validatePassword,
+    TResult? Function(String confirmPassword, String password)?
+        validateConfirmPassword,
+    TResult? Function(String email, String password, String confirmPassword)?
+        signUp,
   }) {
     return initial?.call();
   }
@@ -131,7 +168,12 @@ class _$InitialSignUp implements InitialSignUp {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(String email, String password)? signUp,
+    TResult Function(String email)? validateEmail,
+    TResult Function(String password)? validatePassword,
+    TResult Function(String confirmPassword, String password)?
+        validateConfirmPassword,
+    TResult Function(String email, String password, String confirmPassword)?
+        signUp,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -144,6 +186,10 @@ class _$InitialSignUp implements InitialSignUp {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(InitialSignUp value) initial,
+    required TResult Function(ValidateEmail value) validateEmail,
+    required TResult Function(ValidatePassword value) validatePassword,
+    required TResult Function(ValidateConfirmePassword value)
+        validateConfirmPassword,
     required TResult Function(SignUp value) signUp,
   }) {
     return initial(this);
@@ -153,6 +199,9 @@ class _$InitialSignUp implements InitialSignUp {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(InitialSignUp value)? initial,
+    TResult? Function(ValidateEmail value)? validateEmail,
+    TResult? Function(ValidatePassword value)? validatePassword,
+    TResult? Function(ValidateConfirmePassword value)? validateConfirmPassword,
     TResult? Function(SignUp value)? signUp,
   }) {
     return initial?.call(this);
@@ -162,6 +211,9 @@ class _$InitialSignUp implements InitialSignUp {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitialSignUp value)? initial,
+    TResult Function(ValidateEmail value)? validateEmail,
+    TResult Function(ValidatePassword value)? validatePassword,
+    TResult Function(ValidateConfirmePassword value)? validateConfirmPassword,
     TResult Function(SignUp value)? signUp,
     required TResult orElse(),
   }) {
@@ -177,11 +229,504 @@ abstract class InitialSignUp implements SignUpEvent {
 }
 
 /// @nodoc
+abstract class _$$ValidateEmailCopyWith<$Res> {
+  factory _$$ValidateEmailCopyWith(
+          _$ValidateEmail value, $Res Function(_$ValidateEmail) then) =
+      __$$ValidateEmailCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String email});
+}
+
+/// @nodoc
+class __$$ValidateEmailCopyWithImpl<$Res>
+    extends _$SignUpEventCopyWithImpl<$Res, _$ValidateEmail>
+    implements _$$ValidateEmailCopyWith<$Res> {
+  __$$ValidateEmailCopyWithImpl(
+      _$ValidateEmail _value, $Res Function(_$ValidateEmail) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? email = null,
+  }) {
+    return _then(_$ValidateEmail(
+      null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ValidateEmail implements ValidateEmail {
+  const _$ValidateEmail(this.email);
+
+  @override
+  final String email;
+
+  @override
+  String toString() {
+    return 'SignUpEvent.validateEmail(email: $email)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ValidateEmail &&
+            (identical(other.email, email) || other.email == email));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, email);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ValidateEmailCopyWith<_$ValidateEmail> get copyWith =>
+      __$$ValidateEmailCopyWithImpl<_$ValidateEmail>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(String email) validateEmail,
+    required TResult Function(String password) validatePassword,
+    required TResult Function(String confirmPassword, String password)
+        validateConfirmPassword,
+    required TResult Function(
+            String email, String password, String confirmPassword)
+        signUp,
+  }) {
+    return validateEmail(email);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(String email)? validateEmail,
+    TResult? Function(String password)? validatePassword,
+    TResult? Function(String confirmPassword, String password)?
+        validateConfirmPassword,
+    TResult? Function(String email, String password, String confirmPassword)?
+        signUp,
+  }) {
+    return validateEmail?.call(email);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(String email)? validateEmail,
+    TResult Function(String password)? validatePassword,
+    TResult Function(String confirmPassword, String password)?
+        validateConfirmPassword,
+    TResult Function(String email, String password, String confirmPassword)?
+        signUp,
+    required TResult orElse(),
+  }) {
+    if (validateEmail != null) {
+      return validateEmail(email);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitialSignUp value) initial,
+    required TResult Function(ValidateEmail value) validateEmail,
+    required TResult Function(ValidatePassword value) validatePassword,
+    required TResult Function(ValidateConfirmePassword value)
+        validateConfirmPassword,
+    required TResult Function(SignUp value) signUp,
+  }) {
+    return validateEmail(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(InitialSignUp value)? initial,
+    TResult? Function(ValidateEmail value)? validateEmail,
+    TResult? Function(ValidatePassword value)? validatePassword,
+    TResult? Function(ValidateConfirmePassword value)? validateConfirmPassword,
+    TResult? Function(SignUp value)? signUp,
+  }) {
+    return validateEmail?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitialSignUp value)? initial,
+    TResult Function(ValidateEmail value)? validateEmail,
+    TResult Function(ValidatePassword value)? validatePassword,
+    TResult Function(ValidateConfirmePassword value)? validateConfirmPassword,
+    TResult Function(SignUp value)? signUp,
+    required TResult orElse(),
+  }) {
+    if (validateEmail != null) {
+      return validateEmail(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ValidateEmail implements SignUpEvent {
+  const factory ValidateEmail(final String email) = _$ValidateEmail;
+
+  String get email;
+  @JsonKey(ignore: true)
+  _$$ValidateEmailCopyWith<_$ValidateEmail> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ValidatePasswordCopyWith<$Res> {
+  factory _$$ValidatePasswordCopyWith(
+          _$ValidatePassword value, $Res Function(_$ValidatePassword) then) =
+      __$$ValidatePasswordCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String password});
+}
+
+/// @nodoc
+class __$$ValidatePasswordCopyWithImpl<$Res>
+    extends _$SignUpEventCopyWithImpl<$Res, _$ValidatePassword>
+    implements _$$ValidatePasswordCopyWith<$Res> {
+  __$$ValidatePasswordCopyWithImpl(
+      _$ValidatePassword _value, $Res Function(_$ValidatePassword) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? password = null,
+  }) {
+    return _then(_$ValidatePassword(
+      null == password
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ValidatePassword implements ValidatePassword {
+  const _$ValidatePassword(this.password);
+
+  @override
+  final String password;
+
+  @override
+  String toString() {
+    return 'SignUpEvent.validatePassword(password: $password)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ValidatePassword &&
+            (identical(other.password, password) ||
+                other.password == password));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, password);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ValidatePasswordCopyWith<_$ValidatePassword> get copyWith =>
+      __$$ValidatePasswordCopyWithImpl<_$ValidatePassword>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(String email) validateEmail,
+    required TResult Function(String password) validatePassword,
+    required TResult Function(String confirmPassword, String password)
+        validateConfirmPassword,
+    required TResult Function(
+            String email, String password, String confirmPassword)
+        signUp,
+  }) {
+    return validatePassword(password);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(String email)? validateEmail,
+    TResult? Function(String password)? validatePassword,
+    TResult? Function(String confirmPassword, String password)?
+        validateConfirmPassword,
+    TResult? Function(String email, String password, String confirmPassword)?
+        signUp,
+  }) {
+    return validatePassword?.call(password);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(String email)? validateEmail,
+    TResult Function(String password)? validatePassword,
+    TResult Function(String confirmPassword, String password)?
+        validateConfirmPassword,
+    TResult Function(String email, String password, String confirmPassword)?
+        signUp,
+    required TResult orElse(),
+  }) {
+    if (validatePassword != null) {
+      return validatePassword(password);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitialSignUp value) initial,
+    required TResult Function(ValidateEmail value) validateEmail,
+    required TResult Function(ValidatePassword value) validatePassword,
+    required TResult Function(ValidateConfirmePassword value)
+        validateConfirmPassword,
+    required TResult Function(SignUp value) signUp,
+  }) {
+    return validatePassword(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(InitialSignUp value)? initial,
+    TResult? Function(ValidateEmail value)? validateEmail,
+    TResult? Function(ValidatePassword value)? validatePassword,
+    TResult? Function(ValidateConfirmePassword value)? validateConfirmPassword,
+    TResult? Function(SignUp value)? signUp,
+  }) {
+    return validatePassword?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitialSignUp value)? initial,
+    TResult Function(ValidateEmail value)? validateEmail,
+    TResult Function(ValidatePassword value)? validatePassword,
+    TResult Function(ValidateConfirmePassword value)? validateConfirmPassword,
+    TResult Function(SignUp value)? signUp,
+    required TResult orElse(),
+  }) {
+    if (validatePassword != null) {
+      return validatePassword(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ValidatePassword implements SignUpEvent {
+  const factory ValidatePassword(final String password) = _$ValidatePassword;
+
+  String get password;
+  @JsonKey(ignore: true)
+  _$$ValidatePasswordCopyWith<_$ValidatePassword> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ValidateConfirmePasswordCopyWith<$Res> {
+  factory _$$ValidateConfirmePasswordCopyWith(_$ValidateConfirmePassword value,
+          $Res Function(_$ValidateConfirmePassword) then) =
+      __$$ValidateConfirmePasswordCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String confirmPassword, String password});
+}
+
+/// @nodoc
+class __$$ValidateConfirmePasswordCopyWithImpl<$Res>
+    extends _$SignUpEventCopyWithImpl<$Res, _$ValidateConfirmePassword>
+    implements _$$ValidateConfirmePasswordCopyWith<$Res> {
+  __$$ValidateConfirmePasswordCopyWithImpl(_$ValidateConfirmePassword _value,
+      $Res Function(_$ValidateConfirmePassword) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? confirmPassword = null,
+    Object? password = null,
+  }) {
+    return _then(_$ValidateConfirmePassword(
+      null == confirmPassword
+          ? _value.confirmPassword
+          : confirmPassword // ignore: cast_nullable_to_non_nullable
+              as String,
+      null == password
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ValidateConfirmePassword implements ValidateConfirmePassword {
+  const _$ValidateConfirmePassword(this.confirmPassword, this.password);
+
+  @override
+  final String confirmPassword;
+  @override
+  final String password;
+
+  @override
+  String toString() {
+    return 'SignUpEvent.validateConfirmPassword(confirmPassword: $confirmPassword, password: $password)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ValidateConfirmePassword &&
+            (identical(other.confirmPassword, confirmPassword) ||
+                other.confirmPassword == confirmPassword) &&
+            (identical(other.password, password) ||
+                other.password == password));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, confirmPassword, password);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ValidateConfirmePasswordCopyWith<_$ValidateConfirmePassword>
+      get copyWith =>
+          __$$ValidateConfirmePasswordCopyWithImpl<_$ValidateConfirmePassword>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(String email) validateEmail,
+    required TResult Function(String password) validatePassword,
+    required TResult Function(String confirmPassword, String password)
+        validateConfirmPassword,
+    required TResult Function(
+            String email, String password, String confirmPassword)
+        signUp,
+  }) {
+    return validateConfirmPassword(confirmPassword, password);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(String email)? validateEmail,
+    TResult? Function(String password)? validatePassword,
+    TResult? Function(String confirmPassword, String password)?
+        validateConfirmPassword,
+    TResult? Function(String email, String password, String confirmPassword)?
+        signUp,
+  }) {
+    return validateConfirmPassword?.call(confirmPassword, password);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(String email)? validateEmail,
+    TResult Function(String password)? validatePassword,
+    TResult Function(String confirmPassword, String password)?
+        validateConfirmPassword,
+    TResult Function(String email, String password, String confirmPassword)?
+        signUp,
+    required TResult orElse(),
+  }) {
+    if (validateConfirmPassword != null) {
+      return validateConfirmPassword(confirmPassword, password);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitialSignUp value) initial,
+    required TResult Function(ValidateEmail value) validateEmail,
+    required TResult Function(ValidatePassword value) validatePassword,
+    required TResult Function(ValidateConfirmePassword value)
+        validateConfirmPassword,
+    required TResult Function(SignUp value) signUp,
+  }) {
+    return validateConfirmPassword(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(InitialSignUp value)? initial,
+    TResult? Function(ValidateEmail value)? validateEmail,
+    TResult? Function(ValidatePassword value)? validatePassword,
+    TResult? Function(ValidateConfirmePassword value)? validateConfirmPassword,
+    TResult? Function(SignUp value)? signUp,
+  }) {
+    return validateConfirmPassword?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitialSignUp value)? initial,
+    TResult Function(ValidateEmail value)? validateEmail,
+    TResult Function(ValidatePassword value)? validatePassword,
+    TResult Function(ValidateConfirmePassword value)? validateConfirmPassword,
+    TResult Function(SignUp value)? signUp,
+    required TResult orElse(),
+  }) {
+    if (validateConfirmPassword != null) {
+      return validateConfirmPassword(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ValidateConfirmePassword implements SignUpEvent {
+  const factory ValidateConfirmePassword(
+          final String confirmPassword, final String password) =
+      _$ValidateConfirmePassword;
+
+  String get confirmPassword;
+  String get password;
+  @JsonKey(ignore: true)
+  _$$ValidateConfirmePasswordCopyWith<_$ValidateConfirmePassword>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 abstract class _$$SignUpCopyWith<$Res> {
   factory _$$SignUpCopyWith(_$SignUp value, $Res Function(_$SignUp) then) =
       __$$SignUpCopyWithImpl<$Res>;
   @useResult
-  $Res call({String email, String password});
+  $Res call({String email, String password, String confirmPassword});
 }
 
 /// @nodoc
@@ -196,6 +741,7 @@ class __$$SignUpCopyWithImpl<$Res>
   $Res call({
     Object? email = null,
     Object? password = null,
+    Object? confirmPassword = null,
   }) {
     return _then(_$SignUp(
       null == email
@@ -206,6 +752,10 @@ class __$$SignUpCopyWithImpl<$Res>
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String,
+      null == confirmPassword
+          ? _value.confirmPassword
+          : confirmPassword // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -213,16 +763,18 @@ class __$$SignUpCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SignUp implements SignUp {
-  _$SignUp(this.email, this.password);
+  _$SignUp(this.email, this.password, this.confirmPassword);
 
   @override
   final String email;
   @override
   final String password;
+  @override
+  final String confirmPassword;
 
   @override
   String toString() {
-    return 'SignUpEvent.signUp(email: $email, password: $password)';
+    return 'SignUpEvent.signUp(email: $email, password: $password, confirmPassword: $confirmPassword)';
   }
 
   @override
@@ -232,11 +784,14 @@ class _$SignUp implements SignUp {
             other is _$SignUp &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.password, password) ||
-                other.password == password));
+                other.password == password) &&
+            (identical(other.confirmPassword, confirmPassword) ||
+                other.confirmPassword == confirmPassword));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, email, password);
+  int get hashCode =>
+      Object.hash(runtimeType, email, password, confirmPassword);
 
   @JsonKey(ignore: true)
   @override
@@ -248,29 +803,45 @@ class _$SignUp implements SignUp {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(String email, String password) signUp,
+    required TResult Function(String email) validateEmail,
+    required TResult Function(String password) validatePassword,
+    required TResult Function(String confirmPassword, String password)
+        validateConfirmPassword,
+    required TResult Function(
+            String email, String password, String confirmPassword)
+        signUp,
   }) {
-    return signUp(email, password);
+    return signUp(email, password, confirmPassword);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(String email, String password)? signUp,
+    TResult? Function(String email)? validateEmail,
+    TResult? Function(String password)? validatePassword,
+    TResult? Function(String confirmPassword, String password)?
+        validateConfirmPassword,
+    TResult? Function(String email, String password, String confirmPassword)?
+        signUp,
   }) {
-    return signUp?.call(email, password);
+    return signUp?.call(email, password, confirmPassword);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(String email, String password)? signUp,
+    TResult Function(String email)? validateEmail,
+    TResult Function(String password)? validatePassword,
+    TResult Function(String confirmPassword, String password)?
+        validateConfirmPassword,
+    TResult Function(String email, String password, String confirmPassword)?
+        signUp,
     required TResult orElse(),
   }) {
     if (signUp != null) {
-      return signUp(email, password);
+      return signUp(email, password, confirmPassword);
     }
     return orElse();
   }
@@ -279,6 +850,10 @@ class _$SignUp implements SignUp {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(InitialSignUp value) initial,
+    required TResult Function(ValidateEmail value) validateEmail,
+    required TResult Function(ValidatePassword value) validatePassword,
+    required TResult Function(ValidateConfirmePassword value)
+        validateConfirmPassword,
     required TResult Function(SignUp value) signUp,
   }) {
     return signUp(this);
@@ -288,6 +863,9 @@ class _$SignUp implements SignUp {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(InitialSignUp value)? initial,
+    TResult? Function(ValidateEmail value)? validateEmail,
+    TResult? Function(ValidatePassword value)? validatePassword,
+    TResult? Function(ValidateConfirmePassword value)? validateConfirmPassword,
     TResult? Function(SignUp value)? signUp,
   }) {
     return signUp?.call(this);
@@ -297,6 +875,9 @@ class _$SignUp implements SignUp {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitialSignUp value)? initial,
+    TResult Function(ValidateEmail value)? validateEmail,
+    TResult Function(ValidatePassword value)? validatePassword,
+    TResult Function(ValidateConfirmePassword value)? validateConfirmPassword,
     TResult Function(SignUp value)? signUp,
     required TResult orElse(),
   }) {
@@ -308,10 +889,12 @@ class _$SignUp implements SignUp {
 }
 
 abstract class SignUp implements SignUpEvent {
-  factory SignUp(final String email, final String password) = _$SignUp;
+  factory SignUp(final String email, final String password,
+      final String confirmPassword) = _$SignUp;
 
   String get email;
   String get password;
+  String get confirmPassword;
   @JsonKey(ignore: true)
   _$$SignUpCopyWith<_$SignUp> get copyWith =>
       throw _privateConstructorUsedError;

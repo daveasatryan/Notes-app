@@ -60,11 +60,71 @@ class S {
     );
   }
 
+  /// `Welcome to notes app`
+  String get welcome_notes_app {
+    return Intl.message(
+      'Welcome to notes app',
+      name: 'welcome_notes_app',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Sign In`
   String get sign_in {
     return Intl.message(
       'Sign In',
       name: 'sign_in',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Field is required`
+  String get field_is_required {
+    return Intl.message(
+      'Field is required',
+      name: 'field_is_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid email`
+  String get invalid_email {
+    return Intl.message(
+      'Invalid email',
+      name: 'invalid_email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid filed`
+  String get invalid_filed {
+    return Intl.message(
+      'Invalid filed',
+      name: 'invalid_filed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Note details`
+  String get note_details {
+    return Intl.message(
+      'Note details',
+      name: 'note_details',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hii! You don't have any notes`
+  String get you_dont_have_notes {
+    return Intl.message(
+      'Hii! You don\'t have any notes',
+      name: 'you_dont_have_notes',
       desc: '',
       args: [],
     );

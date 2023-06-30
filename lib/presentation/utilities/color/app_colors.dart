@@ -1,18 +1,6 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  Color getColor(Set<MaterialState> states) {
-    const Set<MaterialState> interactiveStates = <MaterialState>{
-      MaterialState.pressed,
-      MaterialState.hovered,
-      MaterialState.focused,
-    };
-    if (states.any(interactiveStates.contains)) {
-      return whiteColor;
-    }
-    return greenScreenColor;
-  }
-
   Color get transparent => const Color(0x00FFFFFF);
 
   Color get greenScreenColor => const Color(0xFF459B4F);
@@ -21,7 +9,7 @@ class AppColors {
 
   Color get borderTrueColor => const Color(0xFF57315E);
 
-  Color get greenBorderColor => const Color(0xFFABBE50);
+  Color get yellowMainColor => const Color(0xFFABBE50);
 
   Color get mainAppColor => purple;
 
@@ -105,7 +93,7 @@ class AppColors {
 
   Color get redShadeColor => const Color(0xFFEC756F);
 
-  Color get orangeShadeColor => const Color(0xFFEEAE52);
+  Color get orangeShadeColor => const Color(0xFFEEAE52).withOpacity(0.3);
 
   Color get blueShadeColor => const Color(0xFF9BD0E3);
 
@@ -130,5 +118,4 @@ class AppColors {
   Color get footerColor => const Color(0xFFF4F4F4);
 
   Color get chipColor => const Color(0xFFE6E4E2);
-  
 }

@@ -27,27 +27,33 @@ class AppBarWidget extends StatelessWidget
   Widget build(BuildContext context) {
     return AppBar(
       actions: [
-        showLogOut == true
-            ? InkWell(
-                onTap: () => logOut?.call(),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    context.strings.log_out,
-                    style: titleStyle ??
-                        context.fonts.latoLight.copyWith(
-                          color: context.colors.barrierColor,
-                          fontSize: 18,
-                        ),
-                  ),
-                ),
-              )
-            : const SizedBox(),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            showLogOut == true
+                ? InkWell(
+                    onTap: () => logOut?.call(),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        context.strings.log_out,
+                        style: titleStyle ??
+                            context.fonts.latoLight.copyWith(
+                              color: context.colors.barrierColor,
+                              fontSize: 18,
+                            ),
+                      ),
+                    ),
+                  )
+                : const SizedBox(),
+          ],
+        )
       ],
       leading: hasBack
           ? InkWell(
               onTap: () => Navigator.pop(context),
-              child: Icon(Icons.arrow_back, color: context.colors.black45Color))
+              child: Icon(Icons.arrow_back,
+                  color: context.colors.appSecondaryColor))
           : const SizedBox(),
       centerTitle: centerTitle,
       backgroundColor: backgroundColor,

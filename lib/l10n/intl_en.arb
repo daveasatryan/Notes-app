@@ -1,6 +1,12 @@
 {
     "app_name": "Product",
+    "welcome_notes_app": "Welcome to notes app",
     "sign_in": "Sign In",
+    "field_is_required": "Field is required",
+    "invalid_email": "Invalid email",
+    "invalid_filed": "Invalid filed",
+    "note_details": "Note details",
+    "you_dont_have_notes": "Hii! You don't have any notes",
     "sign_up": "Sign Up",
     "email_lable": "Email",
     "email_hint": "Enter email",

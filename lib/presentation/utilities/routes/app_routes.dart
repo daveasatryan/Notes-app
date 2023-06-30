@@ -56,6 +56,10 @@ class AppRoutes {
       name: mainRoute,
       page: () => const MainScreen(),
     ),
+    GetPage(
+      name: noteRoute,
+      page: () => const NoteScreen(),
+    ),
   ];
 
   static final List<GetPage> _mainRoutes = [

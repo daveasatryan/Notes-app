@@ -61,7 +61,7 @@ class _BottomSheetWidgetState extends State<BottomSheetWidget>
             hideLoading(context);
             return Container(
               decoration: BoxDecoration(
-                color: context.colors.whiteColor,
+                color: context.colors.appSecondaryColor,
                 borderRadius: BorderRadius.only(
                   topRight: Radius.circular(40.sp),
                   topLeft: Radius.circular(40.sp),
@@ -78,7 +78,7 @@ class _BottomSheetWidgetState extends State<BottomSheetWidget>
                       decoration: BoxDecoration(
                         border: Border(
                           bottom: BorderSide(
-                            color: context.colors.dividerColor,
+                            color: context.colors.barrierColor,
                             width: 4,
                           ),
                         ),
@@ -90,7 +90,8 @@ class _BottomSheetWidgetState extends State<BottomSheetWidget>
                     widget.openBottomSheet == OpenBottomSheet.addNote
                         ? context.strings.new_note
                         : context.strings.update_note,
-                    style: context.fonts.latoMedium.copyWith(fontSize: 30),
+                    style: context.fonts.latoMedium
+                        .copyWith(fontSize: 30, color: colors.barrierColor),
                   ),
                   SizedBox(height: 15.sp),
                   Expanded(
@@ -110,7 +111,7 @@ class _BottomSheetWidgetState extends State<BottomSheetWidget>
                                   ? widget.note?.header
                                   : '',
                               showBorders: true,
-                              borderColor: context.colors.barrierColor,
+                              borderColor: context.colors.yellowMainColor,
                               controller: widget.headerTextController,
                               hint: context.strings.header_hint,
                               labelText: context.strings.header_lable,
@@ -128,7 +129,7 @@ class _BottomSheetWidgetState extends State<BottomSheetWidget>
                               minLines: 20,
                               contentPaddingVertical: 18,
                               showBorders: true,
-                              borderColor: context.colors.barrierColor,
+                              borderColor: context.colors.yellowMainColor,
                               controller: widget.noteTextController,
                               hint: context.strings.new_note_hint,
                               labelText: context.strings.note,
@@ -140,7 +141,7 @@ class _BottomSheetWidgetState extends State<BottomSheetWidget>
                             Align(
                               alignment: Alignment.bottomRight,
                               child: CustomButton(
-                                color: context.colors.borderTrueColor,
+                                color: context.colors.yellowMainColor,
                                 padding: const EdgeInsets.symmetric(
                                   horizontal: 50,
                                   vertical: 10,

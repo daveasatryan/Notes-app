@@ -1,5 +1,6 @@
 // ignore: depend_on_referenced_packages
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:product_app/data/utilities/enums/validation_enum.dart';
 
 part 'sign_in_state.freezed.dart';
 
@@ -13,7 +14,10 @@ class SignInState with _$SignInState {
     required String msg,
   }) = _$SignInStateError;
 
-  const factory SignInState.signIn() = _$SignInStateSignIn;
+  const factory SignInState.signIn({
+    required ValidationEnum email,
+    required ValidationEnum password,
+  }) = _$SignInStateSignIn;
 }
 
 extension SignInStateExt on SignInState {
@@ -21,7 +25,7 @@ extension SignInStateExt on SignInState {
         loading: () => false,
         success: () => false,
         error: (_) => false,
-        signIn: () => true,
+        signIn: (_,__) => true,
       );
 
   bool listenWhen() => !buildWhen();
