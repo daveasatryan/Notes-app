@@ -16,42 +16,49 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$MainEvent {
-  String get uid => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String uid) getNotes,
+    required TResult Function(NoteEntity noteEntity) deleteNotes,
+    required TResult Function() signOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String uid)? getNotes,
+    TResult? Function(NoteEntity noteEntity)? deleteNotes,
+    TResult? Function()? signOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String uid)? getNotes,
+    TResult Function(NoteEntity noteEntity)? deleteNotes,
+    TResult Function()? signOut,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetNotes value) getNotes,
+    required TResult Function(DeleteNotes value) deleteNotes,
+    required TResult Function(SignOut value) signOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetNotes value)? getNotes,
+    TResult? Function(DeleteNotes value)? deleteNotes,
+    TResult? Function(SignOut value)? signOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetNotes value)? getNotes,
+    TResult Function(DeleteNotes value)? deleteNotes,
+    TResult Function(SignOut value)? signOut,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $MainEventCopyWith<MainEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -59,8 +66,6 @@ mixin _$MainEvent {
 abstract class $MainEventCopyWith<$Res> {
   factory $MainEventCopyWith(MainEvent value, $Res Function(MainEvent) then) =
       _$MainEventCopyWithImpl<$Res, MainEvent>;
-  @useResult
-  $Res call({String uid});
 }
 
 /// @nodoc
@@ -72,27 +77,13 @@ class _$MainEventCopyWithImpl<$Res, $Val extends MainEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? uid = null,
-  }) {
-    return _then(_value.copyWith(
-      uid: null == uid
-          ? _value.uid
-          : uid // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
 }
 
 /// @nodoc
-abstract class _$$GetNotesCopyWith<$Res> implements $MainEventCopyWith<$Res> {
+abstract class _$$GetNotesCopyWith<$Res> {
   factory _$$GetNotesCopyWith(
           _$GetNotes value, $Res Function(_$GetNotes) then) =
       __$$GetNotesCopyWithImpl<$Res>;
-  @override
   @useResult
   $Res call({String uid});
 }
@@ -152,6 +143,8 @@ class _$GetNotes implements GetNotes {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String uid) getNotes,
+    required TResult Function(NoteEntity noteEntity) deleteNotes,
+    required TResult Function() signOut,
   }) {
     return getNotes(uid);
   }
@@ -160,6 +153,8 @@ class _$GetNotes implements GetNotes {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String uid)? getNotes,
+    TResult? Function(NoteEntity noteEntity)? deleteNotes,
+    TResult? Function()? signOut,
   }) {
     return getNotes?.call(uid);
   }
@@ -168,6 +163,8 @@ class _$GetNotes implements GetNotes {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String uid)? getNotes,
+    TResult Function(NoteEntity noteEntity)? deleteNotes,
+    TResult Function()? signOut,
     required TResult orElse(),
   }) {
     if (getNotes != null) {
@@ -180,6 +177,8 @@ class _$GetNotes implements GetNotes {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetNotes value) getNotes,
+    required TResult Function(DeleteNotes value) deleteNotes,
+    required TResult Function(SignOut value) signOut,
   }) {
     return getNotes(this);
   }
@@ -188,6 +187,8 @@ class _$GetNotes implements GetNotes {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetNotes value)? getNotes,
+    TResult? Function(DeleteNotes value)? deleteNotes,
+    TResult? Function(SignOut value)? signOut,
   }) {
     return getNotes?.call(this);
   }
@@ -196,6 +197,8 @@ class _$GetNotes implements GetNotes {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetNotes value)? getNotes,
+    TResult Function(DeleteNotes value)? deleteNotes,
+    TResult Function(SignOut value)? signOut,
     required TResult orElse(),
   }) {
     if (getNotes != null) {
@@ -208,10 +211,254 @@ class _$GetNotes implements GetNotes {
 abstract class GetNotes implements MainEvent {
   factory GetNotes({required final String uid}) = _$GetNotes;
 
-  @override
   String get uid;
-  @override
   @JsonKey(ignore: true)
   _$$GetNotesCopyWith<_$GetNotes> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DeleteNotesCopyWith<$Res> {
+  factory _$$DeleteNotesCopyWith(
+          _$DeleteNotes value, $Res Function(_$DeleteNotes) then) =
+      __$$DeleteNotesCopyWithImpl<$Res>;
+  @useResult
+  $Res call({NoteEntity noteEntity});
+}
+
+/// @nodoc
+class __$$DeleteNotesCopyWithImpl<$Res>
+    extends _$MainEventCopyWithImpl<$Res, _$DeleteNotes>
+    implements _$$DeleteNotesCopyWith<$Res> {
+  __$$DeleteNotesCopyWithImpl(
+      _$DeleteNotes _value, $Res Function(_$DeleteNotes) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? noteEntity = null,
+  }) {
+    return _then(_$DeleteNotes(
+      noteEntity: null == noteEntity
+          ? _value.noteEntity
+          : noteEntity // ignore: cast_nullable_to_non_nullable
+              as NoteEntity,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DeleteNotes implements DeleteNotes {
+  _$DeleteNotes({required this.noteEntity});
+
+  @override
+  final NoteEntity noteEntity;
+
+  @override
+  String toString() {
+    return 'MainEvent.deleteNotes(noteEntity: $noteEntity)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteNotes &&
+            (identical(other.noteEntity, noteEntity) ||
+                other.noteEntity == noteEntity));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, noteEntity);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteNotesCopyWith<_$DeleteNotes> get copyWith =>
+      __$$DeleteNotesCopyWithImpl<_$DeleteNotes>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid) getNotes,
+    required TResult Function(NoteEntity noteEntity) deleteNotes,
+    required TResult Function() signOut,
+  }) {
+    return deleteNotes(noteEntity);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid)? getNotes,
+    TResult? Function(NoteEntity noteEntity)? deleteNotes,
+    TResult? Function()? signOut,
+  }) {
+    return deleteNotes?.call(noteEntity);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid)? getNotes,
+    TResult Function(NoteEntity noteEntity)? deleteNotes,
+    TResult Function()? signOut,
+    required TResult orElse(),
+  }) {
+    if (deleteNotes != null) {
+      return deleteNotes(noteEntity);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetNotes value) getNotes,
+    required TResult Function(DeleteNotes value) deleteNotes,
+    required TResult Function(SignOut value) signOut,
+  }) {
+    return deleteNotes(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetNotes value)? getNotes,
+    TResult? Function(DeleteNotes value)? deleteNotes,
+    TResult? Function(SignOut value)? signOut,
+  }) {
+    return deleteNotes?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetNotes value)? getNotes,
+    TResult Function(DeleteNotes value)? deleteNotes,
+    TResult Function(SignOut value)? signOut,
+    required TResult orElse(),
+  }) {
+    if (deleteNotes != null) {
+      return deleteNotes(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteNotes implements MainEvent {
+  factory DeleteNotes({required final NoteEntity noteEntity}) = _$DeleteNotes;
+
+  NoteEntity get noteEntity;
+  @JsonKey(ignore: true)
+  _$$DeleteNotesCopyWith<_$DeleteNotes> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SignOutCopyWith<$Res> {
+  factory _$$SignOutCopyWith(_$SignOut value, $Res Function(_$SignOut) then) =
+      __$$SignOutCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SignOutCopyWithImpl<$Res>
+    extends _$MainEventCopyWithImpl<$Res, _$SignOut>
+    implements _$$SignOutCopyWith<$Res> {
+  __$$SignOutCopyWithImpl(_$SignOut _value, $Res Function(_$SignOut) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$SignOut implements SignOut {
+  _$SignOut();
+
+  @override
+  String toString() {
+    return 'MainEvent.signOut()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SignOut);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String uid) getNotes,
+    required TResult Function(NoteEntity noteEntity) deleteNotes,
+    required TResult Function() signOut,
+  }) {
+    return signOut();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String uid)? getNotes,
+    TResult? Function(NoteEntity noteEntity)? deleteNotes,
+    TResult? Function()? signOut,
+  }) {
+    return signOut?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String uid)? getNotes,
+    TResult Function(NoteEntity noteEntity)? deleteNotes,
+    TResult Function()? signOut,
+    required TResult orElse(),
+  }) {
+    if (signOut != null) {
+      return signOut();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetNotes value) getNotes,
+    required TResult Function(DeleteNotes value) deleteNotes,
+    required TResult Function(SignOut value) signOut,
+  }) {
+    return signOut(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetNotes value)? getNotes,
+    TResult? Function(DeleteNotes value)? deleteNotes,
+    TResult? Function(SignOut value)? signOut,
+  }) {
+    return signOut?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetNotes value)? getNotes,
+    TResult Function(DeleteNotes value)? deleteNotes,
+    TResult Function(SignOut value)? signOut,
+    required TResult orElse(),
+  }) {
+    if (signOut != null) {
+      return signOut(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SignOut implements MainEvent {
+  factory SignOut() = _$SignOut;
 }

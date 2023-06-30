@@ -16,22 +16,23 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$BottomSheetEvent {
+  NoteEntity get note => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(NoteEntity note) addNote,
-    required TResult Function() updateNote,
+    required TResult Function(NoteEntity note) updateNote,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(NoteEntity note)? addNote,
-    TResult? Function()? updateNote,
+    TResult? Function(NoteEntity note)? updateNote,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(NoteEntity note)? addNote,
-    TResult Function()? updateNote,
+    TResult Function(NoteEntity note)? updateNote,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -54,6 +55,10 @@ mixin _$BottomSheetEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $BottomSheetEventCopyWith<BottomSheetEvent> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -61,6 +66,8 @@ abstract class $BottomSheetEventCopyWith<$Res> {
   factory $BottomSheetEventCopyWith(
           BottomSheetEvent value, $Res Function(BottomSheetEvent) then) =
       _$BottomSheetEventCopyWithImpl<$Res, BottomSheetEvent>;
+  @useResult
+  $Res call({NoteEntity note});
 }
 
 /// @nodoc
@@ -72,12 +79,27 @@ class _$BottomSheetEventCopyWithImpl<$Res, $Val extends BottomSheetEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? note = null,
+  }) {
+    return _then(_value.copyWith(
+      note: null == note
+          ? _value.note
+          : note // ignore: cast_nullable_to_non_nullable
+              as NoteEntity,
+    ) as $Val);
+  }
 }
 
 /// @nodoc
-abstract class _$$AddNoteCopyWith<$Res> {
+abstract class _$$AddNoteCopyWith<$Res>
+    implements $BottomSheetEventCopyWith<$Res> {
   factory _$$AddNoteCopyWith(_$AddNote value, $Res Function(_$AddNote) then) =
       __$$AddNoteCopyWithImpl<$Res>;
+  @override
   @useResult
   $Res call({NoteEntity note});
 }
@@ -137,7 +159,7 @@ class _$AddNote implements AddNote {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(NoteEntity note) addNote,
-    required TResult Function() updateNote,
+    required TResult Function(NoteEntity note) updateNote,
   }) {
     return addNote(note);
   }
@@ -146,7 +168,7 @@ class _$AddNote implements AddNote {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(NoteEntity note)? addNote,
-    TResult? Function()? updateNote,
+    TResult? Function(NoteEntity note)? updateNote,
   }) {
     return addNote?.call(note);
   }
@@ -155,7 +177,7 @@ class _$AddNote implements AddNote {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(NoteEntity note)? addNote,
-    TResult Function()? updateNote,
+    TResult Function(NoteEntity note)? updateNote,
     required TResult orElse(),
   }) {
     if (addNote != null) {
@@ -199,17 +221,23 @@ class _$AddNote implements AddNote {
 abstract class AddNote implements BottomSheetEvent {
   factory AddNote({required final NoteEntity note}) = _$AddNote;
 
+  @override
   NoteEntity get note;
+  @override
   @JsonKey(ignore: true)
   _$$AddNoteCopyWith<_$AddNote> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$UpdateNoteCopyWith<$Res> {
+abstract class _$$UpdateNoteCopyWith<$Res>
+    implements $BottomSheetEventCopyWith<$Res> {
   factory _$$UpdateNoteCopyWith(
           _$UpdateNote value, $Res Function(_$UpdateNote) then) =
       __$$UpdateNoteCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({NoteEntity note});
 }
 
 /// @nodoc
@@ -219,54 +247,78 @@ class __$$UpdateNoteCopyWithImpl<$Res>
   __$$UpdateNoteCopyWithImpl(
       _$UpdateNote _value, $Res Function(_$UpdateNote) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? note = null,
+  }) {
+    return _then(_$UpdateNote(
+      note: null == note
+          ? _value.note
+          : note // ignore: cast_nullable_to_non_nullable
+              as NoteEntity,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$UpdateNote implements UpdateNote {
-  _$UpdateNote();
+  _$UpdateNote({required this.note});
+
+  @override
+  final NoteEntity note;
 
   @override
   String toString() {
-    return 'BottomSheetEvent.updateNote()';
+    return 'BottomSheetEvent.updateNote(note: $note)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$UpdateNote);
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateNote &&
+            (identical(other.note, note) || other.note == note));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, note);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateNoteCopyWith<_$UpdateNote> get copyWith =>
+      __$$UpdateNoteCopyWithImpl<_$UpdateNote>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(NoteEntity note) addNote,
-    required TResult Function() updateNote,
+    required TResult Function(NoteEntity note) updateNote,
   }) {
-    return updateNote();
+    return updateNote(note);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(NoteEntity note)? addNote,
-    TResult? Function()? updateNote,
+    TResult? Function(NoteEntity note)? updateNote,
   }) {
-    return updateNote?.call();
+    return updateNote?.call(note);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(NoteEntity note)? addNote,
-    TResult Function()? updateNote,
+    TResult Function(NoteEntity note)? updateNote,
     required TResult orElse(),
   }) {
     if (updateNote != null) {
-      return updateNote();
+      return updateNote(note);
     }
     return orElse();
   }
@@ -304,5 +356,12 @@ class _$UpdateNote implements UpdateNote {
 }
 
 abstract class UpdateNote implements BottomSheetEvent {
-  factory UpdateNote() = _$UpdateNote;
+  factory UpdateNote({required final NoteEntity note}) = _$UpdateNote;
+
+  @override
+  NoteEntity get note;
+  @override
+  @JsonKey(ignore: true)
+  _$$UpdateNoteCopyWith<_$UpdateNote> get copyWith =>
+      throw _privateConstructorUsedError;
 }

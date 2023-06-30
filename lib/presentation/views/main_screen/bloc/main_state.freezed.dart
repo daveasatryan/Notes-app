@@ -20,24 +20,27 @@ mixin _$MainState {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function() success,
+    required TResult Function() signOut,
     required TResult Function(List<NoteEntity> notes) note,
-    required TResult Function(String msg, String errorCode) error,
+    required TResult Function(String msg) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function()? success,
+    TResult? Function()? signOut,
     TResult? Function(List<NoteEntity> notes)? note,
-    TResult? Function(String msg, String errorCode)? error,
+    TResult? Function(String msg)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function()? success,
+    TResult Function()? signOut,
     TResult Function(List<NoteEntity> notes)? note,
-    TResult Function(String msg, String errorCode)? error,
+    TResult Function(String msg)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -45,6 +48,7 @@ mixin _$MainState {
   TResult map<TResult extends Object?>({
     required TResult Function(_$MainStateLoading value) loading,
     required TResult Function(_$MainStateSuccess value) success,
+    required TResult Function(_$MainStateSignOut value) signOut,
     required TResult Function(_$MainStateNote value) note,
     required TResult Function(_$MainStateError value) error,
   }) =>
@@ -53,6 +57,7 @@ mixin _$MainState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_$MainStateLoading value)? loading,
     TResult? Function(_$MainStateSuccess value)? success,
+    TResult? Function(_$MainStateSignOut value)? signOut,
     TResult? Function(_$MainStateNote value)? note,
     TResult? Function(_$MainStateError value)? error,
   }) =>
@@ -61,6 +66,7 @@ mixin _$MainState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_$MainStateLoading value)? loading,
     TResult Function(_$MainStateSuccess value)? success,
+    TResult Function(_$MainStateSignOut value)? signOut,
     TResult Function(_$MainStateNote value)? note,
     TResult Function(_$MainStateError value)? error,
     required TResult orElse(),
@@ -125,8 +131,9 @@ class _$_$MainStateLoading implements _$MainStateLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function() success,
+    required TResult Function() signOut,
     required TResult Function(List<NoteEntity> notes) note,
-    required TResult Function(String msg, String errorCode) error,
+    required TResult Function(String msg) error,
   }) {
     return loading();
   }
@@ -136,8 +143,9 @@ class _$_$MainStateLoading implements _$MainStateLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function()? success,
+    TResult? Function()? signOut,
     TResult? Function(List<NoteEntity> notes)? note,
-    TResult? Function(String msg, String errorCode)? error,
+    TResult? Function(String msg)? error,
   }) {
     return loading?.call();
   }
@@ -147,8 +155,9 @@ class _$_$MainStateLoading implements _$MainStateLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function()? success,
+    TResult Function()? signOut,
     TResult Function(List<NoteEntity> notes)? note,
-    TResult Function(String msg, String errorCode)? error,
+    TResult Function(String msg)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -162,6 +171,7 @@ class _$_$MainStateLoading implements _$MainStateLoading {
   TResult map<TResult extends Object?>({
     required TResult Function(_$MainStateLoading value) loading,
     required TResult Function(_$MainStateSuccess value) success,
+    required TResult Function(_$MainStateSignOut value) signOut,
     required TResult Function(_$MainStateNote value) note,
     required TResult Function(_$MainStateError value) error,
   }) {
@@ -173,6 +183,7 @@ class _$_$MainStateLoading implements _$MainStateLoading {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_$MainStateLoading value)? loading,
     TResult? Function(_$MainStateSuccess value)? success,
+    TResult? Function(_$MainStateSignOut value)? signOut,
     TResult? Function(_$MainStateNote value)? note,
     TResult? Function(_$MainStateError value)? error,
   }) {
@@ -184,6 +195,7 @@ class _$_$MainStateLoading implements _$MainStateLoading {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_$MainStateLoading value)? loading,
     TResult Function(_$MainStateSuccess value)? success,
+    TResult Function(_$MainStateSignOut value)? signOut,
     TResult Function(_$MainStateNote value)? note,
     TResult Function(_$MainStateError value)? error,
     required TResult orElse(),
@@ -239,8 +251,9 @@ class _$_$MainStateSuccess implements _$MainStateSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function() success,
+    required TResult Function() signOut,
     required TResult Function(List<NoteEntity> notes) note,
-    required TResult Function(String msg, String errorCode) error,
+    required TResult Function(String msg) error,
   }) {
     return success();
   }
@@ -250,8 +263,9 @@ class _$_$MainStateSuccess implements _$MainStateSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function()? success,
+    TResult? Function()? signOut,
     TResult? Function(List<NoteEntity> notes)? note,
-    TResult? Function(String msg, String errorCode)? error,
+    TResult? Function(String msg)? error,
   }) {
     return success?.call();
   }
@@ -261,8 +275,9 @@ class _$_$MainStateSuccess implements _$MainStateSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function()? success,
+    TResult Function()? signOut,
     TResult Function(List<NoteEntity> notes)? note,
-    TResult Function(String msg, String errorCode)? error,
+    TResult Function(String msg)? error,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -276,6 +291,7 @@ class _$_$MainStateSuccess implements _$MainStateSuccess {
   TResult map<TResult extends Object?>({
     required TResult Function(_$MainStateLoading value) loading,
     required TResult Function(_$MainStateSuccess value) success,
+    required TResult Function(_$MainStateSignOut value) signOut,
     required TResult Function(_$MainStateNote value) note,
     required TResult Function(_$MainStateError value) error,
   }) {
@@ -287,6 +303,7 @@ class _$_$MainStateSuccess implements _$MainStateSuccess {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_$MainStateLoading value)? loading,
     TResult? Function(_$MainStateSuccess value)? success,
+    TResult? Function(_$MainStateSignOut value)? signOut,
     TResult? Function(_$MainStateNote value)? note,
     TResult? Function(_$MainStateError value)? error,
   }) {
@@ -298,6 +315,7 @@ class _$_$MainStateSuccess implements _$MainStateSuccess {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_$MainStateLoading value)? loading,
     TResult Function(_$MainStateSuccess value)? success,
+    TResult Function(_$MainStateSignOut value)? signOut,
     TResult Function(_$MainStateNote value)? note,
     TResult Function(_$MainStateError value)? error,
     required TResult orElse(),
@@ -311,6 +329,126 @@ class _$_$MainStateSuccess implements _$MainStateSuccess {
 
 abstract class _$MainStateSuccess implements MainState {
   const factory _$MainStateSuccess() = _$_$MainStateSuccess;
+}
+
+/// @nodoc
+abstract class _$$_$MainStateSignOutCopyWith<$Res> {
+  factory _$$_$MainStateSignOutCopyWith(_$_$MainStateSignOut value,
+          $Res Function(_$_$MainStateSignOut) then) =
+      __$$_$MainStateSignOutCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_$MainStateSignOutCopyWithImpl<$Res>
+    extends _$MainStateCopyWithImpl<$Res, _$_$MainStateSignOut>
+    implements _$$_$MainStateSignOutCopyWith<$Res> {
+  __$$_$MainStateSignOutCopyWithImpl(
+      _$_$MainStateSignOut _value, $Res Function(_$_$MainStateSignOut) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_$MainStateSignOut implements _$MainStateSignOut {
+  const _$_$MainStateSignOut();
+
+  @override
+  String toString() {
+    return 'MainState.signOut()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_$MainStateSignOut);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loading,
+    required TResult Function() success,
+    required TResult Function() signOut,
+    required TResult Function(List<NoteEntity> notes) note,
+    required TResult Function(String msg) error,
+  }) {
+    return signOut();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loading,
+    TResult? Function()? success,
+    TResult? Function()? signOut,
+    TResult? Function(List<NoteEntity> notes)? note,
+    TResult? Function(String msg)? error,
+  }) {
+    return signOut?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function()? signOut,
+    TResult Function(List<NoteEntity> notes)? note,
+    TResult Function(String msg)? error,
+    required TResult orElse(),
+  }) {
+    if (signOut != null) {
+      return signOut();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_$MainStateLoading value) loading,
+    required TResult Function(_$MainStateSuccess value) success,
+    required TResult Function(_$MainStateSignOut value) signOut,
+    required TResult Function(_$MainStateNote value) note,
+    required TResult Function(_$MainStateError value) error,
+  }) {
+    return signOut(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_$MainStateLoading value)? loading,
+    TResult? Function(_$MainStateSuccess value)? success,
+    TResult? Function(_$MainStateSignOut value)? signOut,
+    TResult? Function(_$MainStateNote value)? note,
+    TResult? Function(_$MainStateError value)? error,
+  }) {
+    return signOut?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_$MainStateLoading value)? loading,
+    TResult Function(_$MainStateSuccess value)? success,
+    TResult Function(_$MainStateSignOut value)? signOut,
+    TResult Function(_$MainStateNote value)? note,
+    TResult Function(_$MainStateError value)? error,
+    required TResult orElse(),
+  }) {
+    if (signOut != null) {
+      return signOut(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _$MainStateSignOut implements MainState {
+  const factory _$MainStateSignOut() = _$_$MainStateSignOut;
 }
 
 /// @nodoc
@@ -386,8 +524,9 @@ class _$_$MainStateNote implements _$MainStateNote {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function() success,
+    required TResult Function() signOut,
     required TResult Function(List<NoteEntity> notes) note,
-    required TResult Function(String msg, String errorCode) error,
+    required TResult Function(String msg) error,
   }) {
     return note(notes);
   }
@@ -397,8 +536,9 @@ class _$_$MainStateNote implements _$MainStateNote {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function()? success,
+    TResult? Function()? signOut,
     TResult? Function(List<NoteEntity> notes)? note,
-    TResult? Function(String msg, String errorCode)? error,
+    TResult? Function(String msg)? error,
   }) {
     return note?.call(notes);
   }
@@ -408,8 +548,9 @@ class _$_$MainStateNote implements _$MainStateNote {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function()? success,
+    TResult Function()? signOut,
     TResult Function(List<NoteEntity> notes)? note,
-    TResult Function(String msg, String errorCode)? error,
+    TResult Function(String msg)? error,
     required TResult orElse(),
   }) {
     if (note != null) {
@@ -423,6 +564,7 @@ class _$_$MainStateNote implements _$MainStateNote {
   TResult map<TResult extends Object?>({
     required TResult Function(_$MainStateLoading value) loading,
     required TResult Function(_$MainStateSuccess value) success,
+    required TResult Function(_$MainStateSignOut value) signOut,
     required TResult Function(_$MainStateNote value) note,
     required TResult Function(_$MainStateError value) error,
   }) {
@@ -434,6 +576,7 @@ class _$_$MainStateNote implements _$MainStateNote {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_$MainStateLoading value)? loading,
     TResult? Function(_$MainStateSuccess value)? success,
+    TResult? Function(_$MainStateSignOut value)? signOut,
     TResult? Function(_$MainStateNote value)? note,
     TResult? Function(_$MainStateError value)? error,
   }) {
@@ -445,6 +588,7 @@ class _$_$MainStateNote implements _$MainStateNote {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_$MainStateLoading value)? loading,
     TResult Function(_$MainStateSuccess value)? success,
+    TResult Function(_$MainStateSignOut value)? signOut,
     TResult Function(_$MainStateNote value)? note,
     TResult Function(_$MainStateError value)? error,
     required TResult orElse(),
@@ -472,7 +616,7 @@ abstract class _$$_$MainStateErrorCopyWith<$Res> {
           _$_$MainStateError value, $Res Function(_$_$MainStateError) then) =
       __$$_$MainStateErrorCopyWithImpl<$Res>;
   @useResult
-  $Res call({String msg, String errorCode});
+  $Res call({String msg});
 }
 
 /// @nodoc
@@ -487,16 +631,11 @@ class __$$_$MainStateErrorCopyWithImpl<$Res>
   @override
   $Res call({
     Object? msg = null,
-    Object? errorCode = null,
   }) {
     return _then(_$_$MainStateError(
       msg: null == msg
           ? _value.msg
           : msg // ignore: cast_nullable_to_non_nullable
-              as String,
-      errorCode: null == errorCode
-          ? _value.errorCode
-          : errorCode // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -505,16 +644,14 @@ class __$$_$MainStateErrorCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_$MainStateError implements _$MainStateError {
-  const _$_$MainStateError({required this.msg, required this.errorCode});
+  const _$_$MainStateError({required this.msg});
 
   @override
   final String msg;
-  @override
-  final String errorCode;
 
   @override
   String toString() {
-    return 'MainState.error(msg: $msg, errorCode: $errorCode)';
+    return 'MainState.error(msg: $msg)';
   }
 
   @override
@@ -522,13 +659,11 @@ class _$_$MainStateError implements _$MainStateError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_$MainStateError &&
-            (identical(other.msg, msg) || other.msg == msg) &&
-            (identical(other.errorCode, errorCode) ||
-                other.errorCode == errorCode));
+            (identical(other.msg, msg) || other.msg == msg));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, msg, errorCode);
+  int get hashCode => Object.hash(runtimeType, msg);
 
   @JsonKey(ignore: true)
   @override
@@ -541,10 +676,11 @@ class _$_$MainStateError implements _$MainStateError {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function() success,
+    required TResult Function() signOut,
     required TResult Function(List<NoteEntity> notes) note,
-    required TResult Function(String msg, String errorCode) error,
+    required TResult Function(String msg) error,
   }) {
-    return error(msg, errorCode);
+    return error(msg);
   }
 
   @override
@@ -552,10 +688,11 @@ class _$_$MainStateError implements _$MainStateError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function()? success,
+    TResult? Function()? signOut,
     TResult? Function(List<NoteEntity> notes)? note,
-    TResult? Function(String msg, String errorCode)? error,
+    TResult? Function(String msg)? error,
   }) {
-    return error?.call(msg, errorCode);
+    return error?.call(msg);
   }
 
   @override
@@ -563,12 +700,13 @@ class _$_$MainStateError implements _$MainStateError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function()? success,
+    TResult Function()? signOut,
     TResult Function(List<NoteEntity> notes)? note,
-    TResult Function(String msg, String errorCode)? error,
+    TResult Function(String msg)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
-      return error(msg, errorCode);
+      return error(msg);
     }
     return orElse();
   }
@@ -578,6 +716,7 @@ class _$_$MainStateError implements _$MainStateError {
   TResult map<TResult extends Object?>({
     required TResult Function(_$MainStateLoading value) loading,
     required TResult Function(_$MainStateSuccess value) success,
+    required TResult Function(_$MainStateSignOut value) signOut,
     required TResult Function(_$MainStateNote value) note,
     required TResult Function(_$MainStateError value) error,
   }) {
@@ -589,6 +728,7 @@ class _$_$MainStateError implements _$MainStateError {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_$MainStateLoading value)? loading,
     TResult? Function(_$MainStateSuccess value)? success,
+    TResult? Function(_$MainStateSignOut value)? signOut,
     TResult? Function(_$MainStateNote value)? note,
     TResult? Function(_$MainStateError value)? error,
   }) {
@@ -600,6 +740,7 @@ class _$_$MainStateError implements _$MainStateError {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_$MainStateLoading value)? loading,
     TResult Function(_$MainStateSuccess value)? success,
+    TResult Function(_$MainStateSignOut value)? signOut,
     TResult Function(_$MainStateNote value)? note,
     TResult Function(_$MainStateError value)? error,
     required TResult orElse(),
@@ -612,12 +753,10 @@ class _$_$MainStateError implements _$MainStateError {
 }
 
 abstract class _$MainStateError implements MainState {
-  const factory _$MainStateError(
-      {required final String msg,
-      required final String errorCode}) = _$_$MainStateError;
+  const factory _$MainStateError({required final String msg}) =
+      _$_$MainStateError;
 
   String get msg;
-  String get errorCode;
   @JsonKey(ignore: true)
   _$$_$MainStateErrorCopyWith<_$_$MainStateError> get copyWith =>
       throw _privateConstructorUsedError;

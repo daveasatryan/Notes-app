@@ -8,12 +8,14 @@ class MainState with _$MainState {
   const factory MainState.loading() = _$MainStateLoading;
 
   const factory MainState.success() = _$MainStateSuccess;
+
+  const factory MainState.signOut() = _$MainStateSignOut;
+
   const factory MainState.note({required List<NoteEntity> notes}) =
       _$MainStateNote;
 
   const factory MainState.error({
     required String msg,
-    required String errorCode,
   }) = _$MainStateError;
 }
 
@@ -21,7 +23,8 @@ extension MainStateExt on MainState {
   bool buildWhen() => when(
         loading: () => false,
         success: () => false,
-        error: (_, __) => false,
+        error: (_) => false,
+        signOut: () => false,
         note: (_) => true,
       );
 

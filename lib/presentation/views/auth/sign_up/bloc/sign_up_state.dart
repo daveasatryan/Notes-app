@@ -1,0 +1,28 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+part 'sign_up_state.freezed.dart';
+
+@freezed
+class SignUpState with _$SignUpState {
+  const factory SignUpState.loading() = _$SignUpStateLoading;
+
+  const factory SignUpState.success() = _$SignUpStateSuccess;
+
+  const factory SignUpState.error({
+    required String msg,
+  }) = _$SignUpStateError;
+
+  const factory SignUpState.signUp() = _$SignUpStateSignUp;
+
+}
+
+extension SignUpStateExt on SignUpState {
+  bool buildWhen() => when(
+    loading: () => false,
+    success: () => false,
+    error: (_) => false,
+    signUp: () => true,
+    );
+
+  bool listenWhen() => !buildWhen();
+}

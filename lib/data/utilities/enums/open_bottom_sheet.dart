@@ -1,0 +1,5 @@
+
+enum OpenBottomSheet {
+  addNote,
+  updateNote,
+}

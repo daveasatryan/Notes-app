@@ -41,7 +41,8 @@ class _SignInScreenState extends State<SignInScreen> with BaseStateMixin {
               listenWhen: (previous, current) => current.listenWhen(),
               listener: (context, state) {
                 state.whenOrNull(
-                    success: () => AppRoutes.goTo(AppRoutes.mainRoute),
+                    success: () =>
+                        AppRoutes.goTo(AppRoutes.mainRoute, hasBack: false),
                     loading: () => showLoading(),
                     error: (msg) {
                       return showErrorDialog(msg: msg);

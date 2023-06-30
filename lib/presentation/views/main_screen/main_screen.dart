@@ -2,12 +2,15 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:product_app/data/utilities/bloc/bloc_factory.dart';
+import 'package:product_app/data/utilities/enums/open_bottom_sheet.dart';
 import 'package:product_app/presentation/utilities/extentions/context_extention.dart';
+import 'package:product_app/presentation/utilities/routes/app_routes.dart';
 import 'package:product_app/presentation/utilities/typography/text_theme.dart';
 import 'package:product_app/presentation/views/main_screen/bloc/main_bloc.dart';
 import 'package:product_app/presentation/views/main_screen/bloc/main_event.dart';
 import 'package:product_app/presentation/views/main_screen/bloc/main_state.dart';
 import 'package:product_app/presentation/views/main_screen/widget/bottom_sheet.dart';
+import 'package:product_app/presentation/views/main_screen/widget/note_item_widget/note_item_widget.dart';
 import 'package:product_app/widgets/base/base_state.dart';
 import 'package:product_app/widgets/custom/app_bar_widget.dart';
 
@@ -34,11 +37,11 @@ class _MainScreenState extends State<MainScreen> with BaseStateMixin {
         listenWhen: (previous, current) => current.listenWhen(),
         listener: (context, state) {
           state.whenOrNull(
-              success: () {
-                print("heyy  sus");
-              },
+              success: () {},
               loading: () => showLoading(),
-              error: (msg, _) => showErrorDialog(msg: msg));
+              signOut: () =>
+                  AppRoutes.goTo(AppRoutes.signInRoute, hasBack: false),
+              error: (msg) => showErrorDialog(msg: msg));
         },
         builder: (context, state) => state.maybeWhen(
           orElse: () => Container(),
@@ -46,6 +49,8 @@ class _MainScreenState extends State<MainScreen> with BaseStateMixin {
             hideLoading(context);
             return Scaffold(
               appBar: AppBarWidget(
+                showLogOut: true,
+                logOut: () => context.read<MainBloc>().add(MainEvent.signOut()),
                 title: user?.email ?? '',
                 backgroundColor: colors.purple,
               ),
@@ -58,6 +63,7 @@ class _MainScreenState extends State<MainScreen> with BaseStateMixin {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               const SizedBox(),
+                              //Image.asset(AppAssets.emptyListIcon),
                               Text(
                                 "Hii! You don't have any notes",
                                 style: fonts.latoMediumItalic.copyWith(
@@ -79,82 +85,11 @@ class _MainScreenState extends State<MainScreen> with BaseStateMixin {
                             padding: EdgeInsets.zero,
                             physics: const NeverScrollableScrollPhysics(),
                             itemBuilder: (context, index) {
-                              return GestureDetector(
-                                //  onTap: () => AppRoutes.goToNested(AppRoutes.articleDetails, arguments: articles[index]),
-                                child: Card(
-                                  margin: const EdgeInsets.all(7),
-                                  elevation: 0,
-                                  color: colors.barrierColor.withOpacity(0.1),
-                                  child: Container(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 10),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        Padding(
-                                          padding: const EdgeInsets.symmetric(
-                                              vertical: 10),
-                                          child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            children: [
-                                              Expanded(
-                                                child: Text(
-                                                  notes[index].header ?? '',
-                                                  style:
-                                                      fonts.latoBlack.copyWith(
-                                                    color: colors.black,
-                                                    overflow:
-                                                        TextOverflow.ellipsis,
-                                                  ),
-                                                ),
-                                              ),
-                                              InkWell(
-                                                onTap: () {
-                                                  //edit item note
-                                                },
-                                                child: Icon(
-                                                  Icons.edit,
-                                                  color: colors.barrierColor,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        Expanded(
-                                          child: Text(
-                                            notes[index].note ?? '',
-                                            style: fonts.latoRegular.copyWith(
-                                                color:
-                                                    colors.blackOpacityColor),
-                                            overflow: TextOverflow.clip,
-                                          ),
-                                        ),
-                                        Row(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.center,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            const Text('date'),
-                                            InkWell(
-                                              onTap: () {
-                                                //delete note item
-                                              },
-                                              child: Icon(
-                                                Icons.delete,
-                                                color: colors.barrierColor,
-                                              ),
-                                            ),
-                                          ],
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ),
+                              return NoteItemWidget(
+                                note: notes[index],
+                                headerTextController: _headerTextController,
+                                noteTextController: _noteTextController,
+                                user: user,
                               );
                             },
                           )
@@ -173,6 +108,7 @@ class _MainScreenState extends State<MainScreen> with BaseStateMixin {
                   backgroundColor: Colors.transparent,
                   builder: (context) {
                     return BottomSheetWidget(
+                      openBottomSheet: OpenBottomSheet.addNote,
                       headerTextController: _headerTextController,
                       noteTextController: _noteTextController,
                       userUid: user?.uid ?? '',

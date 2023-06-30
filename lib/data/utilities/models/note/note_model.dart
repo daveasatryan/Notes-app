@@ -9,7 +9,8 @@ class NoteModel extends NoteEntity {
     final Timestamp? time,
     final String? uid,
   }) : super(uid: uid, header: header, time: time, note: note, noteId: noteId);
-  factory NoteModel.fromSnapshot(DocumentSnapshot documentSnapshot) {
+  factory NoteModel.fromSnapshot(
+      DocumentSnapshot<Map<String, dynamic>> documentSnapshot) {
     return NoteModel(
       noteId: documentSnapshot.get('noteId'),
       note: documentSnapshot.get('note'),

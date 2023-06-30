@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'sign_in_state.dart';
+part of 'sign_up_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,13 +15,13 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$SignInState {
+mixin _$SignUpState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function() success,
     required TResult Function(String msg) error,
-    required TResult Function() signIn,
+    required TResult Function() signUp,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -29,7 +29,7 @@ mixin _$SignInState {
     TResult? Function()? loading,
     TResult? Function()? success,
     TResult? Function(String msg)? error,
-    TResult? Function()? signIn,
+    TResult? Function()? signUp,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -37,48 +37,48 @@ mixin _$SignInState {
     TResult Function()? loading,
     TResult Function()? success,
     TResult Function(String msg)? error,
-    TResult Function()? signIn,
+    TResult Function()? signUp,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_$SignInStateLoading value) loading,
-    required TResult Function(_$SignInStateSuccess value) success,
-    required TResult Function(_$SignInStateError value) error,
-    required TResult Function(_$SignInStateSignIn value) signIn,
+    required TResult Function(_$SignUpStateLoading value) loading,
+    required TResult Function(_$SignUpStateSuccess value) success,
+    required TResult Function(_$SignUpStateError value) error,
+    required TResult Function(_$SignUpStateSignUp value) signUp,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_$SignInStateLoading value)? loading,
-    TResult? Function(_$SignInStateSuccess value)? success,
-    TResult? Function(_$SignInStateError value)? error,
-    TResult? Function(_$SignInStateSignIn value)? signIn,
+    TResult? Function(_$SignUpStateLoading value)? loading,
+    TResult? Function(_$SignUpStateSuccess value)? success,
+    TResult? Function(_$SignUpStateError value)? error,
+    TResult? Function(_$SignUpStateSignUp value)? signUp,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_$SignInStateLoading value)? loading,
-    TResult Function(_$SignInStateSuccess value)? success,
-    TResult Function(_$SignInStateError value)? error,
-    TResult Function(_$SignInStateSignIn value)? signIn,
+    TResult Function(_$SignUpStateLoading value)? loading,
+    TResult Function(_$SignUpStateSuccess value)? success,
+    TResult Function(_$SignUpStateError value)? error,
+    TResult Function(_$SignUpStateSignUp value)? signUp,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SignInStateCopyWith<$Res> {
-  factory $SignInStateCopyWith(
-          SignInState value, $Res Function(SignInState) then) =
-      _$SignInStateCopyWithImpl<$Res, SignInState>;
+abstract class $SignUpStateCopyWith<$Res> {
+  factory $SignUpStateCopyWith(
+          SignUpState value, $Res Function(SignUpState) then) =
+      _$SignUpStateCopyWithImpl<$Res, SignUpState>;
 }
 
 /// @nodoc
-class _$SignInStateCopyWithImpl<$Res, $Val extends SignInState>
-    implements $SignInStateCopyWith<$Res> {
-  _$SignInStateCopyWithImpl(this._value, this._then);
+class _$SignUpStateCopyWithImpl<$Res, $Val extends SignUpState>
+    implements $SignUpStateCopyWith<$Res> {
+  _$SignUpStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -87,35 +87,35 @@ class _$SignInStateCopyWithImpl<$Res, $Val extends SignInState>
 }
 
 /// @nodoc
-abstract class _$$_$SignInStateLoadingCopyWith<$Res> {
-  factory _$$_$SignInStateLoadingCopyWith(_$_$SignInStateLoading value,
-          $Res Function(_$_$SignInStateLoading) then) =
-      __$$_$SignInStateLoadingCopyWithImpl<$Res>;
+abstract class _$$_$SignUpStateLoadingCopyWith<$Res> {
+  factory _$$_$SignUpStateLoadingCopyWith(_$_$SignUpStateLoading value,
+          $Res Function(_$_$SignUpStateLoading) then) =
+      __$$_$SignUpStateLoadingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_$SignInStateLoadingCopyWithImpl<$Res>
-    extends _$SignInStateCopyWithImpl<$Res, _$_$SignInStateLoading>
-    implements _$$_$SignInStateLoadingCopyWith<$Res> {
-  __$$_$SignInStateLoadingCopyWithImpl(_$_$SignInStateLoading _value,
-      $Res Function(_$_$SignInStateLoading) _then)
+class __$$_$SignUpStateLoadingCopyWithImpl<$Res>
+    extends _$SignUpStateCopyWithImpl<$Res, _$_$SignUpStateLoading>
+    implements _$$_$SignUpStateLoadingCopyWith<$Res> {
+  __$$_$SignUpStateLoadingCopyWithImpl(_$_$SignUpStateLoading _value,
+      $Res Function(_$_$SignUpStateLoading) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_$SignInStateLoading implements _$SignInStateLoading {
-  const _$_$SignInStateLoading();
+class _$_$SignUpStateLoading implements _$SignUpStateLoading {
+  const _$_$SignUpStateLoading();
 
   @override
   String toString() {
-    return 'SignInState.loading()';
+    return 'SignUpState.loading()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_$SignInStateLoading);
+        (other.runtimeType == runtimeType && other is _$_$SignUpStateLoading);
   }
 
   @override
@@ -127,7 +127,7 @@ class _$_$SignInStateLoading implements _$SignInStateLoading {
     required TResult Function() loading,
     required TResult Function() success,
     required TResult Function(String msg) error,
-    required TResult Function() signIn,
+    required TResult Function() signUp,
   }) {
     return loading();
   }
@@ -138,7 +138,7 @@ class _$_$SignInStateLoading implements _$SignInStateLoading {
     TResult? Function()? loading,
     TResult? Function()? success,
     TResult? Function(String msg)? error,
-    TResult? Function()? signIn,
+    TResult? Function()? signUp,
   }) {
     return loading?.call();
   }
@@ -149,7 +149,7 @@ class _$_$SignInStateLoading implements _$SignInStateLoading {
     TResult Function()? loading,
     TResult Function()? success,
     TResult Function(String msg)? error,
-    TResult Function()? signIn,
+    TResult Function()? signUp,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -161,10 +161,10 @@ class _$_$SignInStateLoading implements _$SignInStateLoading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_$SignInStateLoading value) loading,
-    required TResult Function(_$SignInStateSuccess value) success,
-    required TResult Function(_$SignInStateError value) error,
-    required TResult Function(_$SignInStateSignIn value) signIn,
+    required TResult Function(_$SignUpStateLoading value) loading,
+    required TResult Function(_$SignUpStateSuccess value) success,
+    required TResult Function(_$SignUpStateError value) error,
+    required TResult Function(_$SignUpStateSignUp value) signUp,
   }) {
     return loading(this);
   }
@@ -172,10 +172,10 @@ class _$_$SignInStateLoading implements _$SignInStateLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_$SignInStateLoading value)? loading,
-    TResult? Function(_$SignInStateSuccess value)? success,
-    TResult? Function(_$SignInStateError value)? error,
-    TResult? Function(_$SignInStateSignIn value)? signIn,
+    TResult? Function(_$SignUpStateLoading value)? loading,
+    TResult? Function(_$SignUpStateSuccess value)? success,
+    TResult? Function(_$SignUpStateError value)? error,
+    TResult? Function(_$SignUpStateSignUp value)? signUp,
   }) {
     return loading?.call(this);
   }
@@ -183,10 +183,10 @@ class _$_$SignInStateLoading implements _$SignInStateLoading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_$SignInStateLoading value)? loading,
-    TResult Function(_$SignInStateSuccess value)? success,
-    TResult Function(_$SignInStateError value)? error,
-    TResult Function(_$SignInStateSignIn value)? signIn,
+    TResult Function(_$SignUpStateLoading value)? loading,
+    TResult Function(_$SignUpStateSuccess value)? success,
+    TResult Function(_$SignUpStateError value)? error,
+    TResult Function(_$SignUpStateSignUp value)? signUp,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -196,40 +196,40 @@ class _$_$SignInStateLoading implements _$SignInStateLoading {
   }
 }
 
-abstract class _$SignInStateLoading implements SignInState {
-  const factory _$SignInStateLoading() = _$_$SignInStateLoading;
+abstract class _$SignUpStateLoading implements SignUpState {
+  const factory _$SignUpStateLoading() = _$_$SignUpStateLoading;
 }
 
 /// @nodoc
-abstract class _$$_$SignInStateSuccessCopyWith<$Res> {
-  factory _$$_$SignInStateSuccessCopyWith(_$_$SignInStateSuccess value,
-          $Res Function(_$_$SignInStateSuccess) then) =
-      __$$_$SignInStateSuccessCopyWithImpl<$Res>;
+abstract class _$$_$SignUpStateSuccessCopyWith<$Res> {
+  factory _$$_$SignUpStateSuccessCopyWith(_$_$SignUpStateSuccess value,
+          $Res Function(_$_$SignUpStateSuccess) then) =
+      __$$_$SignUpStateSuccessCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_$SignInStateSuccessCopyWithImpl<$Res>
-    extends _$SignInStateCopyWithImpl<$Res, _$_$SignInStateSuccess>
-    implements _$$_$SignInStateSuccessCopyWith<$Res> {
-  __$$_$SignInStateSuccessCopyWithImpl(_$_$SignInStateSuccess _value,
-      $Res Function(_$_$SignInStateSuccess) _then)
+class __$$_$SignUpStateSuccessCopyWithImpl<$Res>
+    extends _$SignUpStateCopyWithImpl<$Res, _$_$SignUpStateSuccess>
+    implements _$$_$SignUpStateSuccessCopyWith<$Res> {
+  __$$_$SignUpStateSuccessCopyWithImpl(_$_$SignUpStateSuccess _value,
+      $Res Function(_$_$SignUpStateSuccess) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_$SignInStateSuccess implements _$SignInStateSuccess {
-  const _$_$SignInStateSuccess();
+class _$_$SignUpStateSuccess implements _$SignUpStateSuccess {
+  const _$_$SignUpStateSuccess();
 
   @override
   String toString() {
-    return 'SignInState.success()';
+    return 'SignUpState.success()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_$SignInStateSuccess);
+        (other.runtimeType == runtimeType && other is _$_$SignUpStateSuccess);
   }
 
   @override
@@ -241,7 +241,7 @@ class _$_$SignInStateSuccess implements _$SignInStateSuccess {
     required TResult Function() loading,
     required TResult Function() success,
     required TResult Function(String msg) error,
-    required TResult Function() signIn,
+    required TResult Function() signUp,
   }) {
     return success();
   }
@@ -252,7 +252,7 @@ class _$_$SignInStateSuccess implements _$SignInStateSuccess {
     TResult? Function()? loading,
     TResult? Function()? success,
     TResult? Function(String msg)? error,
-    TResult? Function()? signIn,
+    TResult? Function()? signUp,
   }) {
     return success?.call();
   }
@@ -263,7 +263,7 @@ class _$_$SignInStateSuccess implements _$SignInStateSuccess {
     TResult Function()? loading,
     TResult Function()? success,
     TResult Function(String msg)? error,
-    TResult Function()? signIn,
+    TResult Function()? signUp,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -275,10 +275,10 @@ class _$_$SignInStateSuccess implements _$SignInStateSuccess {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_$SignInStateLoading value) loading,
-    required TResult Function(_$SignInStateSuccess value) success,
-    required TResult Function(_$SignInStateError value) error,
-    required TResult Function(_$SignInStateSignIn value) signIn,
+    required TResult Function(_$SignUpStateLoading value) loading,
+    required TResult Function(_$SignUpStateSuccess value) success,
+    required TResult Function(_$SignUpStateError value) error,
+    required TResult Function(_$SignUpStateSignUp value) signUp,
   }) {
     return success(this);
   }
@@ -286,10 +286,10 @@ class _$_$SignInStateSuccess implements _$SignInStateSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_$SignInStateLoading value)? loading,
-    TResult? Function(_$SignInStateSuccess value)? success,
-    TResult? Function(_$SignInStateError value)? error,
-    TResult? Function(_$SignInStateSignIn value)? signIn,
+    TResult? Function(_$SignUpStateLoading value)? loading,
+    TResult? Function(_$SignUpStateSuccess value)? success,
+    TResult? Function(_$SignUpStateError value)? error,
+    TResult? Function(_$SignUpStateSignUp value)? signUp,
   }) {
     return success?.call(this);
   }
@@ -297,10 +297,10 @@ class _$_$SignInStateSuccess implements _$SignInStateSuccess {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_$SignInStateLoading value)? loading,
-    TResult Function(_$SignInStateSuccess value)? success,
-    TResult Function(_$SignInStateError value)? error,
-    TResult Function(_$SignInStateSignIn value)? signIn,
+    TResult Function(_$SignUpStateLoading value)? loading,
+    TResult Function(_$SignUpStateSuccess value)? success,
+    TResult Function(_$SignUpStateError value)? error,
+    TResult Function(_$SignUpStateSignUp value)? signUp,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -310,25 +310,25 @@ class _$_$SignInStateSuccess implements _$SignInStateSuccess {
   }
 }
 
-abstract class _$SignInStateSuccess implements SignInState {
-  const factory _$SignInStateSuccess() = _$_$SignInStateSuccess;
+abstract class _$SignUpStateSuccess implements SignUpState {
+  const factory _$SignUpStateSuccess() = _$_$SignUpStateSuccess;
 }
 
 /// @nodoc
-abstract class _$$_$SignInStateErrorCopyWith<$Res> {
-  factory _$$_$SignInStateErrorCopyWith(_$_$SignInStateError value,
-          $Res Function(_$_$SignInStateError) then) =
-      __$$_$SignInStateErrorCopyWithImpl<$Res>;
+abstract class _$$_$SignUpStateErrorCopyWith<$Res> {
+  factory _$$_$SignUpStateErrorCopyWith(_$_$SignUpStateError value,
+          $Res Function(_$_$SignUpStateError) then) =
+      __$$_$SignUpStateErrorCopyWithImpl<$Res>;
   @useResult
   $Res call({String msg});
 }
 
 /// @nodoc
-class __$$_$SignInStateErrorCopyWithImpl<$Res>
-    extends _$SignInStateCopyWithImpl<$Res, _$_$SignInStateError>
-    implements _$$_$SignInStateErrorCopyWith<$Res> {
-  __$$_$SignInStateErrorCopyWithImpl(
-      _$_$SignInStateError _value, $Res Function(_$_$SignInStateError) _then)
+class __$$_$SignUpStateErrorCopyWithImpl<$Res>
+    extends _$SignUpStateCopyWithImpl<$Res, _$_$SignUpStateError>
+    implements _$$_$SignUpStateErrorCopyWith<$Res> {
+  __$$_$SignUpStateErrorCopyWithImpl(
+      _$_$SignUpStateError _value, $Res Function(_$_$SignUpStateError) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -336,7 +336,7 @@ class __$$_$SignInStateErrorCopyWithImpl<$Res>
   $Res call({
     Object? msg = null,
   }) {
-    return _then(_$_$SignInStateError(
+    return _then(_$_$SignUpStateError(
       msg: null == msg
           ? _value.msg
           : msg // ignore: cast_nullable_to_non_nullable
@@ -347,22 +347,22 @@ class __$$_$SignInStateErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_$SignInStateError implements _$SignInStateError {
-  const _$_$SignInStateError({required this.msg});
+class _$_$SignUpStateError implements _$SignUpStateError {
+  const _$_$SignUpStateError({required this.msg});
 
   @override
   final String msg;
 
   @override
   String toString() {
-    return 'SignInState.error(msg: $msg)';
+    return 'SignUpState.error(msg: $msg)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_$SignInStateError &&
+            other is _$_$SignUpStateError &&
             (identical(other.msg, msg) || other.msg == msg));
   }
 
@@ -372,8 +372,8 @@ class _$_$SignInStateError implements _$SignInStateError {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_$SignInStateErrorCopyWith<_$_$SignInStateError> get copyWith =>
-      __$$_$SignInStateErrorCopyWithImpl<_$_$SignInStateError>(
+  _$$_$SignUpStateErrorCopyWith<_$_$SignUpStateError> get copyWith =>
+      __$$_$SignUpStateErrorCopyWithImpl<_$_$SignUpStateError>(
           this, _$identity);
 
   @override
@@ -382,7 +382,7 @@ class _$_$SignInStateError implements _$SignInStateError {
     required TResult Function() loading,
     required TResult Function() success,
     required TResult Function(String msg) error,
-    required TResult Function() signIn,
+    required TResult Function() signUp,
   }) {
     return error(msg);
   }
@@ -393,7 +393,7 @@ class _$_$SignInStateError implements _$SignInStateError {
     TResult? Function()? loading,
     TResult? Function()? success,
     TResult? Function(String msg)? error,
-    TResult? Function()? signIn,
+    TResult? Function()? signUp,
   }) {
     return error?.call(msg);
   }
@@ -404,7 +404,7 @@ class _$_$SignInStateError implements _$SignInStateError {
     TResult Function()? loading,
     TResult Function()? success,
     TResult Function(String msg)? error,
-    TResult Function()? signIn,
+    TResult Function()? signUp,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -416,10 +416,10 @@ class _$_$SignInStateError implements _$SignInStateError {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_$SignInStateLoading value) loading,
-    required TResult Function(_$SignInStateSuccess value) success,
-    required TResult Function(_$SignInStateError value) error,
-    required TResult Function(_$SignInStateSignIn value) signIn,
+    required TResult Function(_$SignUpStateLoading value) loading,
+    required TResult Function(_$SignUpStateSuccess value) success,
+    required TResult Function(_$SignUpStateError value) error,
+    required TResult Function(_$SignUpStateSignUp value) signUp,
   }) {
     return error(this);
   }
@@ -427,10 +427,10 @@ class _$_$SignInStateError implements _$SignInStateError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_$SignInStateLoading value)? loading,
-    TResult? Function(_$SignInStateSuccess value)? success,
-    TResult? Function(_$SignInStateError value)? error,
-    TResult? Function(_$SignInStateSignIn value)? signIn,
+    TResult? Function(_$SignUpStateLoading value)? loading,
+    TResult? Function(_$SignUpStateSuccess value)? success,
+    TResult? Function(_$SignUpStateError value)? error,
+    TResult? Function(_$SignUpStateSignUp value)? signUp,
   }) {
     return error?.call(this);
   }
@@ -438,10 +438,10 @@ class _$_$SignInStateError implements _$SignInStateError {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_$SignInStateLoading value)? loading,
-    TResult Function(_$SignInStateSuccess value)? success,
-    TResult Function(_$SignInStateError value)? error,
-    TResult Function(_$SignInStateSignIn value)? signIn,
+    TResult Function(_$SignUpStateLoading value)? loading,
+    TResult Function(_$SignUpStateSuccess value)? success,
+    TResult Function(_$SignUpStateError value)? error,
+    TResult Function(_$SignUpStateSignUp value)? signUp,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -451,46 +451,46 @@ class _$_$SignInStateError implements _$SignInStateError {
   }
 }
 
-abstract class _$SignInStateError implements SignInState {
-  const factory _$SignInStateError({required final String msg}) =
-      _$_$SignInStateError;
+abstract class _$SignUpStateError implements SignUpState {
+  const factory _$SignUpStateError({required final String msg}) =
+      _$_$SignUpStateError;
 
   String get msg;
   @JsonKey(ignore: true)
-  _$$_$SignInStateErrorCopyWith<_$_$SignInStateError> get copyWith =>
+  _$$_$SignUpStateErrorCopyWith<_$_$SignUpStateError> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_$SignInStateSignInCopyWith<$Res> {
-  factory _$$_$SignInStateSignInCopyWith(_$_$SignInStateSignIn value,
-          $Res Function(_$_$SignInStateSignIn) then) =
-      __$$_$SignInStateSignInCopyWithImpl<$Res>;
+abstract class _$$_$SignUpStateSignUpCopyWith<$Res> {
+  factory _$$_$SignUpStateSignUpCopyWith(_$_$SignUpStateSignUp value,
+          $Res Function(_$_$SignUpStateSignUp) then) =
+      __$$_$SignUpStateSignUpCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_$SignInStateSignInCopyWithImpl<$Res>
-    extends _$SignInStateCopyWithImpl<$Res, _$_$SignInStateSignIn>
-    implements _$$_$SignInStateSignInCopyWith<$Res> {
-  __$$_$SignInStateSignInCopyWithImpl(
-      _$_$SignInStateSignIn _value, $Res Function(_$_$SignInStateSignIn) _then)
+class __$$_$SignUpStateSignUpCopyWithImpl<$Res>
+    extends _$SignUpStateCopyWithImpl<$Res, _$_$SignUpStateSignUp>
+    implements _$$_$SignUpStateSignUpCopyWith<$Res> {
+  __$$_$SignUpStateSignUpCopyWithImpl(
+      _$_$SignUpStateSignUp _value, $Res Function(_$_$SignUpStateSignUp) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_$SignInStateSignIn implements _$SignInStateSignIn {
-  const _$_$SignInStateSignIn();
+class _$_$SignUpStateSignUp implements _$SignUpStateSignUp {
+  const _$_$SignUpStateSignUp();
 
   @override
   String toString() {
-    return 'SignInState.signIn()';
+    return 'SignUpState.signUp()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_$SignInStateSignIn);
+        (other.runtimeType == runtimeType && other is _$_$SignUpStateSignUp);
   }
 
   @override
@@ -502,9 +502,9 @@ class _$_$SignInStateSignIn implements _$SignInStateSignIn {
     required TResult Function() loading,
     required TResult Function() success,
     required TResult Function(String msg) error,
-    required TResult Function() signIn,
+    required TResult Function() signUp,
   }) {
-    return signIn();
+    return signUp();
   }
 
   @override
@@ -513,9 +513,9 @@ class _$_$SignInStateSignIn implements _$SignInStateSignIn {
     TResult? Function()? loading,
     TResult? Function()? success,
     TResult? Function(String msg)? error,
-    TResult? Function()? signIn,
+    TResult? Function()? signUp,
   }) {
-    return signIn?.call();
+    return signUp?.call();
   }
 
   @override
@@ -524,11 +524,11 @@ class _$_$SignInStateSignIn implements _$SignInStateSignIn {
     TResult Function()? loading,
     TResult Function()? success,
     TResult Function(String msg)? error,
-    TResult Function()? signIn,
+    TResult Function()? signUp,
     required TResult orElse(),
   }) {
-    if (signIn != null) {
-      return signIn();
+    if (signUp != null) {
+      return signUp();
     }
     return orElse();
   }
@@ -536,41 +536,41 @@ class _$_$SignInStateSignIn implements _$SignInStateSignIn {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_$SignInStateLoading value) loading,
-    required TResult Function(_$SignInStateSuccess value) success,
-    required TResult Function(_$SignInStateError value) error,
-    required TResult Function(_$SignInStateSignIn value) signIn,
+    required TResult Function(_$SignUpStateLoading value) loading,
+    required TResult Function(_$SignUpStateSuccess value) success,
+    required TResult Function(_$SignUpStateError value) error,
+    required TResult Function(_$SignUpStateSignUp value) signUp,
   }) {
-    return signIn(this);
+    return signUp(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_$SignInStateLoading value)? loading,
-    TResult? Function(_$SignInStateSuccess value)? success,
-    TResult? Function(_$SignInStateError value)? error,
-    TResult? Function(_$SignInStateSignIn value)? signIn,
+    TResult? Function(_$SignUpStateLoading value)? loading,
+    TResult? Function(_$SignUpStateSuccess value)? success,
+    TResult? Function(_$SignUpStateError value)? error,
+    TResult? Function(_$SignUpStateSignUp value)? signUp,
   }) {
-    return signIn?.call(this);
+    return signUp?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_$SignInStateLoading value)? loading,
-    TResult Function(_$SignInStateSuccess value)? success,
-    TResult Function(_$SignInStateError value)? error,
-    TResult Function(_$SignInStateSignIn value)? signIn,
+    TResult Function(_$SignUpStateLoading value)? loading,
+    TResult Function(_$SignUpStateSuccess value)? success,
+    TResult Function(_$SignUpStateError value)? error,
+    TResult Function(_$SignUpStateSignUp value)? signUp,
     required TResult orElse(),
   }) {
-    if (signIn != null) {
-      return signIn(this);
+    if (signUp != null) {
+      return signUp(this);
     }
     return orElse();
   }
 }
 
-abstract class _$SignInStateSignIn implements SignInState {
-  const factory _$SignInStateSignIn() = _$_$SignInStateSignIn;
+abstract class _$SignUpStateSignUp implements SignUpState {
+  const factory _$SignUpStateSignUp() = _$_$SignUpStateSignUp;
 }

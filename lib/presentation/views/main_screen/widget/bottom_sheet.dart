@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:product_app/data/utilities/bloc/bloc_factory.dart';
+import 'package:product_app/data/utilities/enums/open_bottom_sheet.dart';
 import 'package:product_app/domain/entities/note_entity.dart';
 import 'package:product_app/presentation/utilities/extentions/context_extention.dart';
 import 'package:product_app/presentation/utilities/typography/text_theme.dart';
@@ -19,10 +20,13 @@ class BottomSheetWidget extends StatefulWidget {
     required this.userUid,
     required this.noteTextController,
     required this.headerTextController,
+    required this.openBottomSheet,
+    this.note,
   });
 
   final String userUid;
-
+  final NoteEntity? note;
+  final OpenBottomSheet openBottomSheet;
   final TextEditingController noteTextController;
   final TextEditingController headerTextController;
 
@@ -34,6 +38,9 @@ class _BottomSheetWidgetState extends State<BottomSheetWidget>
     with BaseStateMixin {
   @override
   Widget build(BuildContext context) {
+    // widget.openBottomSheet == OpenBottomSheet.updateNote
+    //     ? widget.noteTextController.text = widget.note?.note ?? ''
+    //     : '';
     return BlocProvider(
       create: (context) =>
           context.read<BlocFactory>().create<BottomSheetBloc>(),
@@ -80,7 +87,9 @@ class _BottomSheetWidgetState extends State<BottomSheetWidget>
                   ),
                   SizedBox(height: 10.sp),
                   Text(
-                    context.strings.new_note_lable,
+                    widget.openBottomSheet == OpenBottomSheet.addNote
+                        ? context.strings.new_note
+                        : context.strings.update_note,
                     style: context.fonts.latoMedium.copyWith(fontSize: 30),
                   ),
                   SizedBox(height: 15.sp),
@@ -96,17 +105,25 @@ class _BottomSheetWidgetState extends State<BottomSheetWidget>
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             CustomTextField(
+                              initialValue: widget.openBottomSheet ==
+                                      OpenBottomSheet.updateNote
+                                  ? widget.note?.header
+                                  : '',
                               showBorders: true,
                               borderColor: context.colors.barrierColor,
                               controller: widget.headerTextController,
                               hint: context.strings.header_hint,
                               labelText: context.strings.header_lable,
                               labelStyle: context.fonts.latoMedium
-                                  .copyWith(fontSize: 10),
+                                  .copyWith(fontSize: 18),
                               fillColor: context.colors.inputTextFiledColor,
                             ),
                             SizedBox(height: 20.sp),
                             CustomTextField(
+                              initialValue: widget.openBottomSheet ==
+                                      OpenBottomSheet.updateNote
+                                  ? widget.note?.note
+                                  : '',
                               maxLines: null,
                               minLines: 20,
                               contentPaddingVertical: 18,
@@ -116,7 +133,7 @@ class _BottomSheetWidgetState extends State<BottomSheetWidget>
                               hint: context.strings.new_note_hint,
                               labelText: context.strings.note,
                               labelStyle: context.fonts.latoMedium
-                                  .copyWith(fontSize: 30),
+                                  .copyWith(fontSize: 18),
                               fillColor: context.colors.inputTextFiledColor,
                             ),
                             const SizedBox(height: 20),
@@ -129,19 +146,38 @@ class _BottomSheetWidgetState extends State<BottomSheetWidget>
                                   vertical: 10,
                                 ),
                                 isColorFilled: false,
-                                onTap: () => context
-                                    .read<BottomSheetBloc>()
-                                    .add(BottomSheetEvent.addNote(
-                                      note: NoteEntity(
-                                        note: widget.noteTextController.text,
-                                        time: Timestamp.now(),
-                                        uid: widget.userUid,
-                                        header:
-                                            widget.headerTextController.text,
-                                      ),
-                                    )),
+                                onTap: widget.openBottomSheet ==
+                                        OpenBottomSheet.addNote
+                                    ? () => context
+                                        .read<BottomSheetBloc>()
+                                        .add(BottomSheetEvent.addNote(
+                                          note: NoteEntity(
+                                            note:
+                                                widget.noteTextController.text,
+                                            time: Timestamp.now(),
+                                            uid: widget.userUid,
+                                            header: widget
+                                                .headerTextController.text,
+                                          ),
+                                        ))
+                                    : () => context
+                                        .read<BottomSheetBloc>()
+                                        .add(BottomSheetEvent.updateNote(
+                                          note: NoteEntity(
+                                            noteId: widget.note?.noteId,
+                                            note:
+                                                widget.noteTextController.text,
+                                            time: Timestamp.now(),
+                                            uid: widget.userUid,
+                                            header: widget
+                                                .headerTextController.text,
+                                          ),
+                                        )),
                                 child: Text(
-                                  context.strings.add,
+                                  widget.openBottomSheet ==
+                                          OpenBottomSheet.addNote
+                                      ? context.strings.add
+                                      : context.strings.update,
                                   textAlign: TextAlign.center,
                                   style: context.fonts.latoMedium.copyWith(
                                       color: context.colors.whiteColor),

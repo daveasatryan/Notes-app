@@ -150,6 +150,16 @@ class S {
     );
   }
 
+  /// `LogOut`
+  String get log_out {
+    return Intl.message(
+      'LogOut',
+      name: 'log_out',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Create Account`
   String get create_account {
     return Intl.message(
@@ -190,6 +200,16 @@ class S {
     );
   }
 
+  /// `Update note`
+  String get update_note {
+    return Intl.message(
+      'Update note',
+      name: 'update_note',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Note`
   String get note {
     return Intl.message(
@@ -210,10 +230,20 @@ class S {
     );
   }
 
-  /// `Write your new note`
+  /// `Update`
+  String get update {
+    return Intl.message(
+      'Update',
+      name: 'update',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Write your note`
   String get new_note_hint {
     return Intl.message(
-      'Write your new note',
+      'Write your note',
       name: 'new_note_hint',
       desc: '',
       args: [],

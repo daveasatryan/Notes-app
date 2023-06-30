@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:product_app/presentation/utilities/extentions/context_extention.dart';
 import 'package:product_app/presentation/utilities/typography/text_theme.dart';
 
-class CustomTextField extends StatelessWidget {
+class CustomTextField extends StatefulWidget {
   final String hint;
   final String labelText;
   final bool isPasswordField;
@@ -93,105 +93,119 @@ class CustomTextField extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
-    if (controller?.text != initialValue && initialValue != null) {
-      controller?.text = initialValue ?? '';
+  State<CustomTextField> createState() => _CustomTextFieldState();
+}
+
+class _CustomTextFieldState extends State<CustomTextField> {
+  @override
+  void initState() {
+    if (widget.controller?.text != widget.initialValue ||
+        widget.initialValue != null) {
+      widget.controller?.text = widget.initialValue ?? '';
     }
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return IgnorePointer(
-      ignoring: ignoring,
+      ignoring: widget.ignoring,
       child: TextField(
-        style: style ??
+        style: widget.style ??
             context.fonts.latoBold.copyWith(
-              color: textColor ?? context.colors.blackOpacityColor,
+              color: widget.textColor ?? context.colors.blackOpacityColor,
               fontSize: 14.sp,
             ),
         scrollPadding: EdgeInsets.only(bottom: 100.sp),
-        keyboardType: keyboardType,
-        focusNode: focusNode,
+        keyboardType: widget.keyboardType,
+        focusNode: widget.focusNode,
         textInputAction: TextInputAction.done,
-        enabled: enabled,
-        controller: controller,
-        readOnly: readOnly,
-        maxLines: maxLines,
-        minLines: minLines,
-        cursorColor: cursorColor ?? context.colors.greenScreenColor,
-        maxLength: maxLength,
-        inputFormatters: inputFormatters,
-        obscureText: isPasswordField ? hidePassword : false,
-        textCapitalization: textCapitalization ?? TextCapitalization.sentences,
+        enabled: widget.enabled,
+        controller: widget.controller,
+        readOnly: widget.readOnly,
+        maxLines: widget.maxLines,
+        minLines: widget.minLines,
+        cursorColor: widget.cursorColor ?? context.colors.greenScreenColor,
+        maxLength: widget.maxLength,
+        inputFormatters: widget.inputFormatters,
+        obscureText: widget.isPasswordField ? widget.hidePassword : false,
+        textCapitalization:
+            widget.textCapitalization ?? TextCapitalization.sentences,
         textAlignVertical: TextAlignVertical.center,
         // todo: Set default style,
         decoration: InputDecoration(
             floatingLabelBehavior: FloatingLabelBehavior.always,
-            errorText: errorText,
-            labelStyle: labelStyle,
-            labelText: labelText,
-            hintText: hint,
-            hintStyle: hintStyle,
+            errorText: widget.errorText,
+            labelStyle: widget.labelStyle,
+            labelText: widget.labelText,
+            hintText: widget.hint,
+            hintStyle: widget.hintStyle,
             filled: true,
-            fillColor: fillColor,
+            fillColor: widget.fillColor,
             border: InputBorder.none,
             counterText: '',
             // todo: Set default hintStyle,
             contentPadding: EdgeInsets.symmetric(
-              vertical: contentPaddingVertical ?? 5.sp,
-              horizontal: contentPaddingHorizontal ?? 27.sp,
+              vertical: widget.contentPaddingVertical ?? 5.sp,
+              horizontal: widget.contentPaddingHorizontal ?? 27.sp,
             ),
-            prefixIcon: prefixIcon,
-            errorBorder: showBorders
+            prefixIcon: widget.prefixIcon,
+            errorBorder: widget.showBorders
                 ? OutlineInputBorder(
                     borderRadius: BorderRadius.all(
-                      Radius.circular(borderRadius),
+                      Radius.circular(widget.borderRadius),
                     ),
                     borderSide: BorderSide(
-                      width: borderWidth,
-                      color: errorText.isNotNullOrEmpty()
+                      width: widget.borderWidth,
+                      color: widget.errorText.isNotNullOrEmpty()
                           ? context.colors.errorColor
                           : context.colors.borderTrueColor,
                     ),
                   )
                 : null,
-            enabledBorder: showBorders
+            enabledBorder: widget.showBorders
                 ? OutlineInputBorder(
                     borderRadius: BorderRadius.all(
-                      Radius.circular(borderRadius),
+                      Radius.circular(widget.borderRadius),
                     ),
                     borderSide: BorderSide(
-                        width: borderWidth,
-                        color: borderColor ?? context.colors.borderTrueColor),
+                        width: widget.borderWidth,
+                        color: widget.borderColor ??
+                            context.colors.borderTrueColor),
                   )
                 : null,
-            focusedErrorBorder: showBorders
+            focusedErrorBorder: widget.showBorders
                 ? OutlineInputBorder(
                     borderRadius: BorderRadius.all(
-                      Radius.circular(borderRadius),
+                      Radius.circular(widget.borderRadius),
                     ),
                     borderSide: BorderSide(
-                      width: borderWidth,
-                      color: errorText.isNotNullOrEmpty()
+                      width: widget.borderWidth,
+                      color: widget.errorText.isNotNullOrEmpty()
                           ? context.colors.errorColor
                           : context.colors.borderTrueColor,
                     ),
                   )
                 : null,
-            focusedBorder: showBorders
+            focusedBorder: widget.showBorders
                 ? OutlineInputBorder(
                     borderRadius: BorderRadius.all(
-                      Radius.circular(borderRadius),
+                      Radius.circular(widget.borderRadius),
                     ),
                     borderSide: BorderSide(
-                      width: borderWidth,
-                      color: errorText.isNotNullOrEmpty()
+                      width: widget.borderWidth,
+                      color: widget.errorText.isNotNullOrEmpty()
                           ? context.colors.errorColor
-                          : borderColor ?? context.colors.borderTrueColor,
+                          : widget.borderColor ??
+                              context.colors.borderTrueColor,
                     ),
                   )
                 : null),
         onChanged: (value) {
-          onChanged?.call(value);
+          widget.onChanged?.call(value);
         },
-        onTap: onTap,
-        onSubmitted: onSubmitted,
+        onTap: widget.onTap,
+        onSubmitted: widget.onSubmitted,
       ),
     );
   }

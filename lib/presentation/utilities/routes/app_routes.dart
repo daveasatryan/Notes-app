@@ -6,7 +6,7 @@ import 'package:product_app/presentation/views/auth/sign_in/sign_in_screen.dart'
 import 'package:product_app/presentation/views/auth/sign_up/sign_up_screen.dart';
 import 'package:product_app/presentation/views/edit_profile_screen/edit_profile_screen.dart';
 import 'package:product_app/presentation/views/main_screen/main_screen.dart';
-import 'package:product_app/presentation/views/save_screen/save_screen.dart';
+import 'package:product_app/presentation/views/note_screen/note_screen.dart';
 import 'package:product_app/presentation/views/splash/splash_screen.dart';
 
 class AppRoutes {
@@ -22,7 +22,7 @@ class AppRoutes {
 
   // main navigation routes
   static const profileRoute = '$mainRoute/profile';
-  static const saveRoute = '$mainRoute/save';
+  static const noteRoute = '$mainRoute/note';
 
   static const rootNavigationKey = 0;
   static const mainNavigationKey = 1;
@@ -64,8 +64,8 @@ class AppRoutes {
       page: () => const ProfileScreen(),
     ),
     GetPage(
-      name: saveRoute,
-      page: () => const SaveScreen(),
+      name: noteRoute,
+      page: () => const NoteScreen(),
     ),
   ];
   static List<GetPage> get rootRoutes => _rootRoutes;

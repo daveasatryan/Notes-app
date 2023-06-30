@@ -12,16 +12,38 @@ class AppBarWidget extends StatelessWidget
       this.centerTitle = true,
       this.titleStyle,
       this.hasBack = false,
+      this.showLogOut = false,
+      this.logOut,
       super.key});
   final bool? centerTitle;
   final bool hasBack;
+  final bool? showLogOut;
   final Color backgroundColor;
   final String title;
   final TextStyle? titleStyle;
+  final Function()? logOut;
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      actions: [
+        showLogOut == true
+            ? InkWell(
+                onTap: () => logOut?.call(),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    context.strings.log_out,
+                    style: titleStyle ??
+                        context.fonts.latoLight.copyWith(
+                          color: context.colors.barrierColor,
+                          fontSize: 18,
+                        ),
+                  ),
+                ),
+              )
+            : const SizedBox(),
+      ],
       leading: hasBack
           ? InkWell(
               onTap: () => Navigator.pop(context),

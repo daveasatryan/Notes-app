@@ -36,15 +36,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "header_hint": MessageLookupByLibrary.simpleMessage("Write header"),
         "header_lable": MessageLookupByLibrary.simpleMessage("Header"),
         "join": MessageLookupByLibrary.simpleMessage("Join"),
+        "log_out": MessageLookupByLibrary.simpleMessage("LogOut"),
         "new_note": MessageLookupByLibrary.simpleMessage("New note"),
         "new_note_hint":
-            MessageLookupByLibrary.simpleMessage("Write your new note"),
+            MessageLookupByLibrary.simpleMessage("Write your note"),
         "new_note_lable": MessageLookupByLibrary.simpleMessage("New note"),
         "note": MessageLookupByLibrary.simpleMessage("Note"),
         "password_hint": MessageLookupByLibrary.simpleMessage("Enter password"),
         "password_lable": MessageLookupByLibrary.simpleMessage("Password"),
         "save": MessageLookupByLibrary.simpleMessage("Save"),
         "sign_in": MessageLookupByLibrary.simpleMessage("Sign In"),
-        "sign_up": MessageLookupByLibrary.simpleMessage("Sign Up")
+        "sign_up": MessageLookupByLibrary.simpleMessage("Sign Up"),
+        "update": MessageLookupByLibrary.simpleMessage("Update"),
+        "update_note": MessageLookupByLibrary.simpleMessage("Update note")
       };
 }

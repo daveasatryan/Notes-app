@@ -6,5 +6,5 @@ part 'bottom_sheet_event.freezed.dart';
 @freezed
 class BottomSheetEvent with _$BottomSheetEvent {
   factory BottomSheetEvent.addNote({required NoteEntity note}) = AddNote;
-  factory BottomSheetEvent.updateNote() = UpdateNote;
+  factory BottomSheetEvent.updateNote({required NoteEntity note}) = UpdateNote;
 }
